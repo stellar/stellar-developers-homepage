@@ -13,6 +13,7 @@ export function Primitives() {
         <div className="pillar__copy">
           <p className="eyebrow">Primitives</p>
           <h2 id="primitives-h2" className="h2">Built-in primitives, extendable contracts</h2>
+          <p className="pillar__note">Get started faster with primitives that are built into the protocol. Extend them with smart contracts.</p>
           <ul className="features nav-list">
             <FeatureItem icon={<Icon.CoinsStacked01 width={16} height={16} />} title="Tokens" link={{ label: "Tokens docs", href: docsUrl("/tokens") }}>
               Stellar Classic assets with issuer controls, built in. Stablecoins, RWAs, vaults and custom tokens from audited implementations.
