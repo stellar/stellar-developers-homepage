@@ -29,8 +29,11 @@
 /* Developer-brand tokens (V6 handoff): dot grid = lilac-08 in Light, lilac-11 in Dark */
 .sds-theme-light { --sds-clr-dev-dot-grid: #aa99ec; }
 .sds-theme-dark { --sds-clr-dev-dot-grid: #9e8cfc; }
-/* clr/dev tokens from Edison's 15 Oct notes. These surfaces stay deep in both themes, so one value each. */
-:root { --clr-dev-surface-deep: #20134b; --clr-dev-on-deep: #fcfcfc; --clr-dev-tile-on-deep: #f5f2ff; --clr-dev-connector: #fdfcfe; }
+/* clr/dev tokens, values read from the Figma V7 Light and Dark frames (SDS · color collection). */
+.sds-theme-light { --clr-dev-surface-deep: #20134b; --clr-dev-on-deep: #fcfcfc; --clr-dev-connector: #fdfcfe; }
+.sds-theme-dark { --clr-dev-surface-deep: #2c2250; --clr-dev-on-deep: #ededed; --clr-dev-connector: #9e8cfc; }
+/* tile-on-deep = SDS lilac-03 on lilac-04 border, icon lilac-11 (flips with the theme) */
+:root { --clr-dev-tile-on-deep: var(--sds-clr-lilac-03); }
 @media (min-width: 768px) { :root { --page-gutter: 48px; } }
 @media (min-width: 1080px) { :root { --page-gutter: 96px; } }
 
@@ -87,7 +90,7 @@ code, pre, .font-mono { font-family: var(--font-mono); }
 .tile { display: flex; flex-direction: column; background: var(--sds-clr-gray-01); border: 1px solid var(--sds-clr-gray-06); border-radius: 12px; overflow: hidden; min-height: 422px; }
 .tile__media { position: relative; height: 200px; background: var(--clr-dev-surface-deep); display: flex; align-items: center; justify-content: center; overflow: hidden; }
 .tile__pattern { position: absolute; inset: 0; }
-.tile__icon { position: relative; width: 72px; height: 72px; border-radius: 18px; background: var(--clr-dev-tile-on-deep); border: 1px solid #ede9fe; color: #5746af; display: flex; align-items: center; justify-content: center; }
+.tile__icon { position: relative; width: 72px; height: 72px; border-radius: 18px; background: var(--clr-dev-tile-on-deep); border: 1px solid var(--sds-clr-lilac-04); color: var(--sds-clr-lilac-11); display: flex; align-items: center; justify-content: center; }
 .tile__icon svg { stroke: currentColor; }
 .tile__body { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; flex: 1 0 0; padding: 20px 24px 24px; }
 .tile__num { font-family: var(--font-mono); font-size: 14px; line-height: 20px; color: var(--sds-clr-gray-11); }

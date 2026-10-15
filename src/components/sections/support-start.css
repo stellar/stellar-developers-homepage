@@ -11,8 +11,6 @@
 .card-start .card-start__h2 { font-weight: 400; font-size: 32px; line-height: 38px; letter-spacing: -0.04em; color: var(--clr-dev-on-deep); margin: 0; }
 .card-start .card-start__lead { font-size: 16px; line-height: 28px; color: var(--clr-dev-on-deep); margin: 0; }
 .card-start .ctas { padding-top: 8px; }
-/* tertiary button on the dark card keeps SDS light surface so it reads as in the frame */
-.card-start .Button--tertiary { background: #fcfcfc; color: #171717; border-color: #e2e2e2; }
 @media (min-width: 768px) {
   .support { padding-block: 64px; }
   .support__cards { grid-template-columns: 1fr 1fr; gap: 32px; }

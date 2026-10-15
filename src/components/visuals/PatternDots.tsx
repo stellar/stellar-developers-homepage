@@ -10,7 +10,7 @@ import { DotGrid } from "@paper-design/shaders-react";
  * opacityRange 0.92 · rotation 180. Colours are read from SDS tokens at
  * runtime so the pattern follows the light/dark theme class.
  */
-export function PatternDots({ back = "--clr-dev-surface-deep", fill = "--sds-clr-lilac-08", className }: { back?: string; fill?: string; className?: string }) {
+export function PatternDots({ back = "--clr-dev-surface-deep", fill = "--sds-clr-dev-dot-grid", className }: { back?: string; fill?: string; className?: string }) {
   const [colors, setColors] = useState<{ back: string; fill: string } | null>(null);
 
   useEffect(() => {
