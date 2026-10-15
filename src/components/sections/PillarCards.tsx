@@ -7,8 +7,8 @@ import { Tag } from "@/components/ui/Tag";
 // Copy note from the frame: these three tiles are not in the 8 Oct copy deck
 // ("Three layers. One network." came from the earlier prototype). Keep / rewrite / remove is Edison + Maz's call.
 const TILES = [
-  { n: "01", title: "Network", desc: "Reliable at scale.", tags: ["SCP", "RPC", "3–5s ledgers", "asset controls"], href: "#network", Icon: Icon.Dataflow03 },
-  { n: "02", title: "Primitives", desc: "Start with proven building blocks.", tags: ["tokens", "smart accounts", "privacy", "smart contracts"], href: "#primitives", Icon: Icon.Cube01 },
+  { n: "01", title: "Network", desc: "Reliable at scale.", tags: ["SCP", "~5s ledgers", "asset controls"], href: "#network", Icon: Icon.Dataflow03 },
+  { n: "02", title: "Primitives", desc: "Start with proven building blocks.", tags: ["tokens", "smart accounts", "privacy"], href: "#primitives", Icon: Icon.Cube01 },
   { n: "03", title: "Ramps", desc: "Reach new markets faster and easier.", tags: ["cash", "bank transfers", "local markets"], href: "#ramps", Icon: Icon.SwitchHorizontal01 },
 ];
 

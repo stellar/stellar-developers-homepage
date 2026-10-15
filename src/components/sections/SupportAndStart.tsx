@@ -22,7 +22,7 @@ export function SupportAndStart() {
             </ul>
             <p className="pillar__note">Explore the Stellar Community Fund, Marketing Grants, and other funding opportunities for projects building on Stellar.</p>
             <div className="ctas">
-              <ButtonLink href="https://stellar.org/grants-and-funding" variant="tertiary" size="md" icon={<Icon.ArrowRight width={14} height={14} aria-hidden />}>See Programs</ButtonLink>
+              <ButtonLink href="https://stellar.org/grants-and-funding" variant="primary" size="md" icon={<Icon.ArrowRight width={14} height={14} aria-hidden />}>See Programs</ButtonLink>
             </div>
           </div>
           <div className="pillar__media">
@@ -43,7 +43,7 @@ export function SupportAndStart() {
             <h2 className="card-start__h2">Start building</h2>
             <p className="card-start__lead">Install the Stellar CLI, fund a testnet account, add trustlines and send your first payment in minutes.</p>
             <div className="ctas">
-              <ButtonLink href="https://developers.stellar.org/docs/tools/quickstart" variant="primary" size="lg" icon={<Icon.ArrowRight width={14} height={14} aria-hidden />}>Quickstart</ButtonLink>
+              <ButtonLink href="/docs/tools/quickstart" variant="primary" size="lg" icon={<Icon.ArrowRight width={14} height={14} aria-hidden />}>Quickstart</ButtonLink>
               <ButtonLink href="https://discord.gg/Q2xfSRAhS" variant="tertiary" size="lg" icon={<Icon.ArrowUpRight width={14} height={14} aria-hidden />}>Join the community</ButtonLink>
             </div>
           </div>

@@ -4,9 +4,9 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const NAV = [
-  { label: "Build", href: "https://developers.stellar.org/docs/build", section: "build" },
+  { label: "Build", href: "/docs/build", section: "build" },
   { label: "Resources", href: "#tooling", section: "tooling" },
-  { label: "Docs", href: "https://developers.stellar.org/docs" },
+  { label: "Docs", href: "/docs" },
   { label: "Ecosystem", href: "https://stellar.org/ecosystem", section: "ecosystem" },
   { label: "Blog", href: "https://stellar.org/blog/developers" },
 ];

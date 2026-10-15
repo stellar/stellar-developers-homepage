@@ -13,7 +13,7 @@ export function Tooling() {
         <div className="pillar__copy">
           <p className="eyebrow">Tooling</p>
           <h2 id="tooling-h2" className="h2">Tools for developers and agents</h2>
-          <p className="pillar__note">Build, test, and deploy with the Stellar CLI, JavaScript and Rust SDKs. Put your agent to work with MCP and skills. Reach network data with <Link href="https://developers.stellar.org/docs/data/apis/rpc" className="inline-link">Stellar RPC</Link>.</p>
+          <p className="pillar__note">Build, test, and deploy with the Stellar CLI, JavaScript and Rust SDKs. Put your agent to work with MCP and skills. Reach network data with <Link href="/docs/data/apis/rpc" className="inline-link">Stellar RPC</Link>.</p>
           <ul className="features nav-list">
             <FeatureItem icon={<Icon.TerminalSquare width={16} height={16} />} title="Stellar CLI">
               Deploy contracts, issue assets and manage accounts from the terminal.
@@ -28,7 +28,7 @@ export function Tooling() {
               Agent payments over HTTP, so your agent can pay for what it uses.
             </FeatureItem>
           </ul>
-          <Link href="https://developers.stellar.org/docs/build/building-with-ai" className="link-primary">
+          <Link href="/docs/build/building-with-ai" className="link-primary">
             Building with AI <Icon.ArrowRight width={14} height={14} aria-hidden />
           </Link>
         </div>

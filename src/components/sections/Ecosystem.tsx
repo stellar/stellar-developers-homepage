@@ -18,7 +18,7 @@ export function Ecosystem() {
             <FeatureItem icon={<Icon.LineChartUp01 width={16} height={16} />} title="Active markets" link={{ label: "Explore markets", href: "https://stellar.org/ecosystem#apply" }}>
               Integrate lending, credit, vaults, and derivatives protocols.
             </FeatureItem>
-            <FeatureItem icon={<Icon.SwitchHorizontal01 width={16} height={16} />} title="Liquidity options" link={{ label: "Learn about liquidity on Stellar", href: "https://developers.stellar.org/docs/learn/fundamentals/liquidity-on-stellar-sdex-liquidity-pools" }}>
+            <FeatureItem icon={<Icon.SwitchHorizontal01 width={16} height={16} />} title="Liquidity options" link={{ label: "Learn about liquidity on Stellar", href: "/docs/learn/fundamentals/liquidity-on-stellar-sdex-liquidity-pools" }}>
               Access liquidity on Stellar and across other networks through DEXs, AMMs, and aggregators.
             </FeatureItem>
           </ul>

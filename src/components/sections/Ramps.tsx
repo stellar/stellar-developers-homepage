@@ -57,7 +57,7 @@ export function Ramps() {
         </div>
 
         <div className="ctas">
-          <ButtonLink href="https://developers.stellar.org/docs/tools/ramps" variant="primary" size="md" icon={<Icon.ArrowRight width={14} height={14} aria-hidden />}>Explore ramp docs</ButtonLink>
+          <ButtonLink href="/docs/tools/ramps" variant="primary" size="md" icon={<Icon.ArrowRight width={14} height={14} aria-hidden />}>Explore ramp docs</ButtonLink>
           <ButtonLink href="https://www.regionalstarterpack.com/" variant="tertiary" size="md" icon={<Icon.ArrowRight width={14} height={14} aria-hidden />}>Explore the regional starter pack</ButtonLink>
         </div>
       </div>

@@ -3,8 +3,8 @@ import { StellarLogo } from "@/components/ui/StellarLogo";
 import "./footer.css";
 
 const COLUMNS = [
-  { title: "Build", links: [["Docs", "https://developers.stellar.org/docs"], ["Quickstart", "https://developers.stellar.org/docs/tools/quickstart"], ["Toolkits", "https://developers.stellar.org/docs/tools"], ["Smart contracts", "https://developers.stellar.org/docs/build/smart-contracts"]] },
-  { title: "Ecosystem", links: [["Partners", "#ramps"], ["Validators & Apps", "https://developers.stellar.org/docs/validators"], ["Developer Preview", "#previews"], ["For Agents", "https://developers.stellar.org/docs/build/building-with-ai"]] },
+  { title: "Build", links: [["Docs", "/docs"], ["Quickstart", "/docs/tools/quickstart"], ["Toolkits", "/docs/tools"], ["Smart contracts", "/docs/build/smart-contracts"]] },
+  { title: "Ecosystem", links: [["Partners", "#ramps"], ["Validators & Apps", "/docs/validators"], ["Developer Preview", "#previews"], ["For Agents", "/docs/build/building-with-ai"]] },
   { title: "Community", links: [["GitHub ↗", "https://github.com/stellar"], ["Discord ↗", "https://discord.gg/Q2xfSRAhS"], ["Stack Exchange ↗", "https://stellar.stackexchange.com"], ["Events", "https://stellar.org/events"]] },
   { title: "Resources", links: [["Network status ↗", "https://status.stellar.org"], ["Developer blog", "https://stellar.org/blog/developers"], ["Stellar.org ↗", "https://stellar.org"], ["Contact", "https://stellar.org/contact"]] },
 ] as const;
