@@ -69,3 +69,26 @@ code, pre, .font-mono { font-family: var(--font-mono); }
   .hero__h1 { font-size: 56px; line-height: 62px; }
   .hero__canvas { flex: 1 0 0; align-self: auto; }
 }
+
+/* ---------- shared bits ---------- */
+.tag { display: inline-flex; align-items: center; padding: 1px 8px; border-radius: 4px; background: var(--sds-clr-gray-03); border: 1px solid var(--sds-clr-gray-06); font-family: var(--font-mono); font-weight: 500; font-size: 12px; line-height: 18px; color: var(--sds-clr-gray-11); white-space: nowrap; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+
+/* ---------- 02 · Pillar cards ---------- */
+.pillars { background: var(--sds-clr-gray-02); border-bottom: 1px solid var(--sds-clr-gray-06); padding-block: 48px; }
+.pillars__grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+.tile { display: flex; flex-direction: column; background: var(--sds-clr-gray-01); border: 1px solid var(--sds-clr-gray-06); border-radius: 12px; overflow: hidden; min-height: 422px; }
+.tile__media { position: relative; height: 200px; background: var(--sds-clr-lilac-12); display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.tile__pattern { position: absolute; inset: 0; }
+.tile__icon { position: relative; width: 72px; height: 72px; border-radius: 18px; background: var(--sds-clr-lilac-03); border: 1px solid var(--sds-clr-lilac-04); color: var(--sds-clr-lilac-11); display: flex; align-items: center; justify-content: center; }
+.tile__icon svg { stroke: currentColor; }
+.tile__body { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; flex: 1 0 0; padding: 20px 24px 24px; }
+.tile__num { font-family: var(--font-mono); font-size: 14px; line-height: 20px; color: var(--sds-clr-gray-11); }
+.tile__title { font-weight: 500; font-size: 20px; line-height: 28px; letter-spacing: -0.01em; color: var(--sds-clr-gray-12); margin: 0; }
+.tile__desc { font-size: 15px; line-height: 24px; color: var(--sds-clr-gray-11); margin: 0; }
+.tile__tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: -2px; }
+.tile__explore { position: relative; margin-top: auto; display: inline-flex; align-items: center; gap: 6px; font-weight: 500; font-size: 14px; line-height: 20px; color: var(--sds-clr-gray-11); text-decoration: none; }
+.tile__explore svg { stroke: var(--sds-clr-lilac-09); }
+.tile__explore:hover { color: var(--sds-clr-gray-12); text-decoration: underline; text-underline-offset: 4px; }
+@media (min-width: 768px) { .pillars { padding-block: 64px; } }
+@media (min-width: 1080px) { .pillars__grid { grid-template-columns: repeat(3, 1fr); } }

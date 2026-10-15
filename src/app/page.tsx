@@ -1,12 +1,13 @@
 import { Placeholder } from "@/components/sections/Placeholder";
 import { Hero } from "@/components/sections/Hero";
+import { PillarCards } from "@/components/sections/PillarCards";
 
 // Section order and numbering follow the V6 Figma frame (copy deck 10/13).
 export default function Home() {
   return (
     <>
       <Hero />
-      <Placeholder id="build" num="02" title="Pillar cards" height={551} />
+      <PillarCards />
       <Placeholder id="network" num="03" title="Network" height={673} />
       <Placeholder id="primitives" num="04" title="Primitives" height={961} />
       <Placeholder id="tooling" num="05" title="Tooling" height={806} />
