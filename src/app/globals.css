@@ -157,7 +157,7 @@ code, pre, .font-mono { font-family: var(--font-mono); }
 .pillar-section--alt { background: var(--sds-clr-gray-02); }
 .pillar__note { font-size: 16px; line-height: 28px; color: var(--sds-clr-gray-11); margin: 0; }
 .ctas { display: flex; flex-wrap: wrap; gap: 12px; }
-.feature .link-primary { padding-top: 6px; }
+.feature__links { display: flex; flex-wrap: wrap; gap: 16px; padding-top: 6px; }
 .Button .Button__icon svg { stroke: currentColor; }
 
 /* ---------- Code tabs panel (504 × 324) ---------- */
