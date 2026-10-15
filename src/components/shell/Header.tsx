@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { StellarLogo } from "@/components/ui/StellarLogo";
 import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
+import { ThemeSwitcher } from "@/components/shell/ThemeSwitcher";
 
 const NAV = [
   { label: "Build", href: "#build" },
@@ -32,6 +33,7 @@ export function Header() {
               style={{ background: "var(--sds-clr-lilac-09)", color: "#fff" }}>
           Developer Docs <ArrowRight size={14} weight="bold" aria-hidden />
         </Link>
+        <ThemeSwitcher />
       </div>
     </header>
   );

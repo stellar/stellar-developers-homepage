@@ -21,7 +21,7 @@ export function LedgerPanel() {
           <span>Mainnet</span>
           <Badge variant="success" size="sm" isStatus>Healthy</Badge>
         </div>
-        <span className="panel__meta font-mono">Protocol 29</span>
+        <span className="panel__meta font-mono">Latest Protocol</span>
       </div>
       <table className="ledger">
         <thead>

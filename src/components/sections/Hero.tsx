@@ -27,8 +27,8 @@ export function Hero() {
             ))}
           </dl>
           <div className="hero__ctas">
-            <ButtonLink href="/docs/" variant="primary" size="lg" icon={<ArrowRight size={16} weight="bold" aria-hidden />}>
-              Developer Docs
+            <ButtonLink href="/docs/build/smart-contracts/getting-started/" variant="primary" size="lg" icon={<ArrowRight size={16} weight="bold" aria-hidden />}>
+              Get started
             </ButtonLink>
           </div>
         </div>

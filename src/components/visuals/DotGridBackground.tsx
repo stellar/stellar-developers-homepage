@@ -5,13 +5,14 @@ import type { CSSProperties } from "react";
 
 /**
  * DotGridBackground — exported from the Dot Grid Background jig.
+ * Dark-mode ready (Stellar developer site, V6).
  * Self-contained: React only, no other dependencies.
  *
  * Usage: render inside a positioned ancestor (e.g. relative/absolute);
- * the canvas fills it and listens for pointer events on it. Dots use the
- * dialed COLORS.dot when set, else the inherited CSS `color` (or the
- * `color` prop), so theming stays plain CSS. A dialed COLORS.background
- * is painted on the canvas itself; leave it null to stay transparent.
+ * the canvas fills it and listens for pointer events on it. Dots and the
+ * canvas background come from SDS tokens (see TOKENS), so Light and Dark
+ * follow the page's data-theme with no extra build. The `color` prop still
+ * overrides the dot colour.
  *
  * Dialed values are baked into OPTIONS below — paste them back into the
  * jig's controls to iterate on this export later.
@@ -31,10 +32,30 @@ const OPTIONS = {
   smoothing: 54.95, // ms cursor-follow time constant
 };
 
-const COLORS = {
-  dot: null as string | null, // null → inherit CSS color (we set color: var(--clr-dev-dot-grid) on the canvas)
-  background: null as string | null, // null → transparent; the hero card paints gray-01 behind it
+/**
+ *   dot        → --sds-clr-dev-dot-grid  (Light #aa99ec = lilac-08 · Dark #9e8cfc = lilac-11)
+ *   background → --sds-clr-gray-01       (Light #fcfcfc            · Dark #161616)
+ * Fallback hex values apply only if the tokens are not defined on the page.
+ */
+const TOKENS = {
+  dot: "--sds-clr-dev-dot-grid",
+  background: "--sds-clr-gray-01",
 };
+const FALLBACK = {
+  light: { dot: "#aa99ec", background: "#fcfcfc" },
+  dark: { dot: "#9e8cfc", background: "#161616" },
+};
+
+function isDark(): boolean {
+  const theme = document.documentElement.getAttribute("data-theme");
+  if (theme) return theme === "dark";
+  return window.matchMedia("(prefers-color-scheme: dark)").matches;
+}
+
+function resolveColor(el: Element, token: string, key: "dot" | "background"): string {
+  const v = getComputedStyle(el).getPropertyValue(token).trim();
+  return v || FALLBACK[isDark() ? "dark" : "light"][key];
+}
 
 interface Dot {
   x: number;
@@ -99,7 +120,11 @@ export function DotGridBackground({
     let dots: Dot[] = [];
     let width = 0;
     let height = 0;
-    let fillColor = color || COLORS.dot || "rgb(128, 128, 128)";
+    let fillColor = color || resolveColor(canvas, TOKENS.dot, "dot");
+    const applyTheme = () => {
+      if (!color) fillColor = resolveColor(canvas, TOKENS.dot, "dot");
+      canvas.style.background = resolveColor(canvas, TOKENS.background, "background");
+    };
     const cursor = { x: -9999, y: -9999, strength: 0 };
     const target = { x: -9999, y: -9999, active: false };
 
@@ -111,7 +136,6 @@ export function DotGridBackground({
       canvas.width = Math.round(width * dpr);
       canvas.height = Math.round(height * dpr);
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      if (!color && !COLORS.dot) fillColor = getComputedStyle(canvas).color;
       dots = buildGrid(width, height);
     };
 
@@ -174,11 +198,14 @@ export function DotGridBackground({
     };
 
     resize();
+    applyTheme();
+    // Re-resolve colours when the theme changes (SDS data-theme or OS setting).
+    const themeObserver = new MutationObserver(applyTheme);
+    themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme", "class"] });
+    const mq = window.matchMedia("(prefers-color-scheme: dark)");
+    mq.addEventListener("change", applyTheme);
     const observer = new ResizeObserver(resize);
     observer.observe(stage);
-    // Re-read the token-bound colour when the SDS theme class flips (light ↔ dark).
-    const themeObserver = new MutationObserver(resize);
-    themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
     stage.addEventListener("pointermove", onPointerMove);
     stage.addEventListener("pointerdown", onPointerMove);
     stage.addEventListener("pointerleave", onPointerLeave);
@@ -188,6 +215,7 @@ export function DotGridBackground({
       cancelAnimationFrame(raf);
       observer.disconnect();
       themeObserver.disconnect();
+      mq.removeEventListener("change", applyTheme);
       stage.removeEventListener("pointermove", onPointerMove);
       stage.removeEventListener("pointerdown", onPointerMove);
       stage.removeEventListener("pointerleave", onPointerLeave);
@@ -205,7 +233,6 @@ export function DotGridBackground({
         inset: 0,
         width: "100%",
         height: "100%",
-        ...(COLORS.background ? { background: COLORS.background } : {}),
         ...style,
       }}
     />

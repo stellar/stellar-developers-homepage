@@ -1,24 +1,18 @@
-import Image from "next/image";
 import Link from "next/link";
 import { Icon } from "@stellar/design-system";
 import { ButtonLink } from "@/components/ui/ButtonLink";
+import { PartnerCarousel } from "@/components/ui/PartnerCarousel";
 import "./ramps.css";
 
 // 06 · Ramps — V6 Figma 1679:5357. Copy from the 10/13 deck; partner cards back per Kate (V6 README).
 // Partner logos exported from the Figma board (approved per Maz, 15 Oct).
 const PARTNERS = [
-  { name: "Bitso", logo: "/partners/bitso.png", href: "https://bitso.com" },
-  { name: "MoneyGram", logo: "/partners/moneygram.png", href: "https://www.moneygram.com" },
-  { name: "Ramp Network", logo: "/partners/ramp-network.png", href: "https://ramp.network" },
-  { name: "Etherfuse", logo: "/partners/etherfuse.png", href: "https://www.etherfuse.com" },
-  { name: "Manteca", logo: "/partners/manteca.png", href: "https://www.manteca.dev" },
-  { name: "Koywe", logo: "/partners/koywe.png", href: "https://www.koywe.com" },
-];
-
-const PARTNER_CARDS = [
   { name: "Etherfuse", tagline: "Pre-built connectors", logo: "/partners/etherfuse.png", href: "https://www.etherfuse.com" },
   { name: "MoneyGram", tagline: "API-first workflows", logo: "/partners/moneygram.png", href: "https://www.moneygram.com" },
   { name: "Ramp Network", tagline: "Connect instantly", logo: "/partners/ramp-network.png", href: "https://ramp.network" },
+  { name: "Bitso", tagline: "Description TBC", logo: "/partners/bitso.png", href: "https://bitso.com" },
+  { name: "Manteca", tagline: "Description TBC", logo: "/partners/manteca.png", href: "https://www.manteca.dev" },
+  { name: "Koywe", tagline: "Description TBC", logo: "/partners/koywe.png", href: "https://www.koywe.com" },
 ];
 
 export function Ramps() {
@@ -32,36 +26,11 @@ export function Ramps() {
           </div>
           <div className="ramps__lead">
             <p className="pillar__note">Open-access ramps connect your app to cash, bank transfers, and local payment methods.</p>
-            <ul className="logo-strip nav-list" aria-label="Ramp partners">
-              {PARTNERS.map((p) => (
-                <li key={p.name}>
-                  <a href={p.href} className="logo-slot" target="_blank" rel="noreferrer">
-                    <Image src={p.logo} alt="" width={22} height={22} className="logo-slot__img" />
-                    <span>{p.name}</span>
-                  </a>
-                </li>
-              ))}
-            </ul>
           </div>
         </div>
 
         <div className="ramp-grid">
-          <ul className="ramp-row ramp-row--3 nav-list">
-            {PARTNER_CARDS.map((c) => (
-              <li key={c.name}>
-                <a href={c.href} className="ramp-card" target="_blank" rel="noreferrer">
-                  <div className="ramp-card__top">
-                    <Image src={c.logo} alt="" width={40} height={40} className="ramp-card__logo" />
-                    <Icon.ArrowUpRight width={16} height={16} aria-hidden className="ramp-card__ext" />
-                  </div>
-                  <div className="ramp-card__copy">
-                    <h3 className="ramp-card__title">{c.name}</h3>
-                    <p className="ramp-card__body">{c.tagline}</p>
-                  </div>
-                </a>
-              </li>
-            ))}
-          </ul>
+          <PartnerCarousel partners={PARTNERS} />
           <ul className="ramp-row ramp-row--2 nav-list">
             <li>
               <Link href="/docs/learn/fundamentals/anchors/" className="ramp-card">
