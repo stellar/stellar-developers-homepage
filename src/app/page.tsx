@@ -4,6 +4,7 @@ import { PillarCards } from "@/components/sections/PillarCards";
 import { Network } from "@/components/sections/Network";
 import { Primitives } from "@/components/sections/Primitives";
 import { Tooling } from "@/components/sections/Tooling";
+import { Ramps } from "@/components/sections/Ramps";
 
 // Section order and numbering follow the V6 Figma frame (copy deck 10/13).
 export default function Home() {
@@ -14,7 +15,7 @@ export default function Home() {
       <Network />
       <Primitives />
       <Tooling />
-      <Placeholder id="ramps" num="06" title="Ramps" height={829} />
+      <Ramps />
       <Placeholder id="ecosystem" num="07" title="Ecosystem" height={673} />
       <Placeholder id="support" num="08" title="Support" height={576} />
       <Placeholder id="previews" num="09" title="Developer Previews + 10 · Start building" height={286} />
