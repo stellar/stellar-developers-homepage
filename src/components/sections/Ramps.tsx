@@ -23,8 +23,6 @@ export function Ramps() {
           <div className="ramps__title">
             <p className="eyebrow">Ramps</p>
             <h2 id="ramps-h2" className="h2">Reach more local markets with every build</h2>
-          </div>
-          <div className="ramps__lead">
             <p className="pillar__note">Open-access ramps connect your app to cash, bank transfers, and local payment methods.</p>
           </div>
         </div>
