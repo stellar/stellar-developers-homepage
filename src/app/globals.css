@@ -32,6 +32,8 @@
 @media (min-width: 768px) { :root { --page-gutter: 48px; } }
 @media (min-width: 1080px) { :root { --page-gutter: 96px; } }
 
+/* SDS adds prose margins to p/h/li; this is a composed page, so reset them (same specificity, loaded later). */
+.sds-theme-light p, .sds-theme-dark p, .sds-theme-light h1, .sds-theme-dark h1, .sds-theme-light h2, .sds-theme-dark h2, .sds-theme-light h3, .sds-theme-dark h3 { margin: 0; }
 html { font-family: var(--font-sans); background: var(--sds-clr-gray-01); color: var(--sds-clr-gray-12); }
 body { background: var(--sds-clr-gray-01); }
 code, pre, .font-mono { font-family: var(--font-mono); }
@@ -187,3 +189,9 @@ code, pre, .font-mono { font-family: var(--font-mono); }
 .theme__item:hover { background: var(--sds-clr-gray-03); }
 .theme__item[aria-checked="true"] { color: var(--sds-clr-lilac-11); }
 .theme__check { margin-left: auto; }
+
+/* ---------- Header nav: Mintlify-style active underline ---------- */
+.nav { display: flex; align-items: stretch; height: 64px; gap: 4px; }
+.nav__link { display: inline-flex; align-items: center; padding: 0 10px; font-size: 14px; line-height: 20px; color: var(--sds-clr-gray-11); text-decoration: none; border-bottom: 2px solid transparent; margin-bottom: -1px; }
+.nav__link:hover { color: var(--sds-clr-gray-12); }
+.nav__link[aria-current="true"] { color: var(--sds-clr-gray-12); font-weight: 500; border-bottom-color: var(--sds-clr-lilac-09); }

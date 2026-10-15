@@ -7,12 +7,12 @@ import "./ramps.css";
 // 06 · Ramps — V6 Figma 1679:5357. Copy from the 10/13 deck; partner cards back per Kate (V6 README).
 // Partner logos exported from the Figma board (approved per Maz, 15 Oct).
 const PARTNERS = [
-  { name: "Etherfuse", tagline: "Pre-built connectors", logo: "/partners/etherfuse.png", href: "https://www.etherfuse.com" },
-  { name: "MoneyGram", tagline: "API-first workflows", logo: "/partners/moneygram.png", href: "https://www.moneygram.com" },
-  { name: "Ramp Network", tagline: "Connect instantly", logo: "/partners/ramp-network.png", href: "https://ramp.network" },
-  { name: "Bitso", tagline: "Description TBC", logo: "/partners/bitso.png", href: "https://bitso.com" },
-  { name: "Manteca", tagline: "Description TBC", logo: "/partners/manteca.png", href: "https://www.manteca.dev" },
-  { name: "Koywe", tagline: "Description TBC", logo: "/partners/koywe.png", href: "https://www.koywe.com" },
+  { name: "Etherfuse", tagline: "Tokenized sovereign bonds and USD to MXN", logo: "/partners/etherfuse.png", href: "https://www.etherfuse.com" },
+  { name: "MoneyGram", tagline: "Cash to USDC and back at retail locations", logo: "/partners/moneygram.png", href: "https://www.moneygram.com" },
+  { name: "Ramp Network", tagline: "Card and bank ramps in 150+ countries", logo: "/partners/ramp-network.png", href: "https://ramp.network" },
+  { name: "Bitso", tagline: "Local payments and LatAm stablecoins", logo: "/partners/bitso.png", href: "https://bitso.com" },
+  { name: "Manteca", tagline: "Ramp and payment APIs across Latin America", logo: "/partners/manteca.png", href: "https://www.manteca.dev" },
+  { name: "Koywe", tagline: "Ramps across five Latin American markets", logo: "/partners/koywe.png", href: "https://www.koywe.com" },
 ];
 
 export function Ramps() {
