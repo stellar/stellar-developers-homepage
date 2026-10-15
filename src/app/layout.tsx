@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Inter, Inconsolata } from "next/font/google";
 import "@stellar/design-system/build/styles.min.css";
 import "./globals.css";
-import { AnnouncementBar } from "@/components/shell/AnnouncementBar";
 import { Header } from "@/components/shell/Header";
 import { Footer } from "@/components/shell/Footer";
 
@@ -20,7 +19,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`sds-theme-light ${inter.variable} ${inconsolata.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
         <a href="#main" className="skip-link">Skip to content</a>
-        <AnnouncementBar />
+        {/* Announcement bar hidden for now (not in the 10/09 deck). Re-enable by rendering <AnnouncementBar /> here. */}
         <Header />
         <main id="main" className="flex-1">{children}</main>
         <Footer />
