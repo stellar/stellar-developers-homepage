@@ -1,26 +1,43 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
+/* Bridge SDS tokens into Tailwind. Color, type and spacing come from SDS;
+   Tailwind is for grid, flex and breakpoints only. */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter), var(--sds-ff-base);
+  --font-mono: var(--font-inconsolata), var(--sds-ff-monospace);
+  --color-page: var(--sds-clr-gray-01);
+  --color-ink: var(--sds-clr-gray-12);
+  --color-muted: var(--sds-clr-gray-11);
+  --color-line: var(--sds-clr-gray-06);
+  --color-lilac-02: var(--sds-clr-lilac-02);
+  --color-lilac-03: var(--sds-clr-lilac-03);
+  --color-lilac-04: var(--sds-clr-lilac-04);
+  --color-lilac-08: var(--sds-clr-lilac-08);
+  --color-lilac-09: var(--sds-clr-lilac-09);
+  --color-lilac-11: var(--sds-clr-lilac-11);
+  --breakpoint-tablet: 768px;
+  --breakpoint-desktop: 1080px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  /* Developer-brand additions from the V6 handoff (clr/dev/*) */
+  --clr-dev-dot-grid: var(--sds-clr-lilac-08);
+  --clr-dev-dot-route: var(--sds-clr-lilac-09);
+  --page-max: 1248px;
+  --page-gutter: 16px;
 }
+@media (min-width: 768px) { :root { --page-gutter: 48px; } }
+@media (min-width: 1080px) { :root { --page-gutter: 96px; } }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+html { font-family: var(--font-sans); background: var(--sds-clr-gray-01); color: var(--sds-clr-gray-12); }
+body { background: var(--sds-clr-gray-01); }
+code, pre, .font-mono { font-family: var(--font-mono); }
+
+.container-page { width: 100%; max-width: calc(var(--page-max) + 2 * var(--page-gutter)); margin-inline: auto; padding-inline: var(--page-gutter); }
+
+.skip-link { position: absolute; left: -9999px; top: 8px; z-index: 100; padding: 8px 12px; background: var(--sds-clr-lilac-09); color: #fff; border-radius: 6px; }
+.skip-link:focus { left: 8px; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
 }

@@ -1,0 +1,11 @@
+[build]
+  command = "npm run build"
+  publish = "out"
+
+# Docs live on Mintlify, served under /docs on this domain (subpath hosting).
+# The target host is set in Mintlify's dashboard once the subpath is configured.
+[[redirects]]
+  from = "/docs/*"
+  to = "https://sdf-migration-preview.mintlify.app/docs/:splat"
+  status = 200
+  force = true
