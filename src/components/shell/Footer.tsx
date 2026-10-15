@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Logo } from "@stellar/design-system";
+import { StellarLogo } from "@/components/ui/StellarLogo";
 
 const COLUMNS = [
   { title: "Build", links: [["Docs", "/docs/"], ["Quickstart", "/docs/build/smart-contracts/getting-started/"], ["Toolkits", "/docs/tools/"], ["Smart contracts", "/docs/build/smart-contracts/"]] },
@@ -14,7 +14,7 @@ export function Footer() {
       <div className="container-page py-16">
         <div className="grid grid-cols-2 tablet:grid-cols-4 desktop:grid-cols-6 gap-8">
           <div className="col-span-2 tablet:col-span-4 desktop:col-span-2">
-            <Logo.Stellar width={96} height={24} />
+            <StellarLogo width={96} height={24} />
             <p className="mt-4 max-w-[288px] text-[14px] leading-[22px]" style={{ color: "var(--sds-clr-gray-11)" }}>
               Build where money already moves around the world
             </p>

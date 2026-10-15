@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Logo } from "@stellar/design-system";
+import { StellarLogo } from "@/components/ui/StellarLogo";
 import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 
 const NAV = [
@@ -17,7 +17,7 @@ export function Header() {
             style={{ background: "var(--sds-clr-gray-01)", borderColor: "var(--sds-clr-gray-06)" }}>
       <div className="container-page h-full flex items-center gap-6">
         <Link href="/" aria-label="Stellar developers home" className="flex items-center">
-          <Logo.Stellar width={96} height={24} />
+          <StellarLogo width={96} height={24} />
         </Link>
         <nav aria-label="Primary" className="hidden tablet:flex items-center gap-5 text-[14px] leading-5">
           {NAV.map((n) => (
