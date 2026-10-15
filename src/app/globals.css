@@ -30,8 +30,8 @@
 .sds-theme-light { --sds-clr-dev-dot-grid: #aa99ec; }
 .sds-theme-dark { --sds-clr-dev-dot-grid: #9e8cfc; }
 /* clr/dev tokens, values read from the Figma V7 Light and Dark frames (SDS · color collection). */
-.sds-theme-light { --clr-dev-surface-deep: #20134b; --clr-dev-on-deep: #fcfcfc; --clr-dev-connector: #fdfcfe; }
-.sds-theme-dark { --clr-dev-surface-deep: #2c2250; --clr-dev-on-deep: #ededed; --clr-dev-connector: #9e8cfc; }
+.sds-theme-light { --clr-dev-surface-deep: #20134b; --clr-dev-on-deep: #fcfcfc; --clr-dev-connector: #fdfcfe; --clr-dev-orbit: #fdfcfe; }
+.sds-theme-dark { --clr-dev-surface-deep: #2c2250; --clr-dev-on-deep: #ededed; --clr-dev-connector: #9e8cfc; --clr-dev-orbit: #d9d9d9; } /* orbit ring is #d9d9d9 in the V7 Dark frame (exported SVG, not token-bound) */
 /* tile-on-deep = SDS lilac-03 on lilac-04 border, icon lilac-11 (flips with the theme) */
 :root { --clr-dev-tile-on-deep: var(--sds-clr-lilac-03); }
 @media (min-width: 768px) { :root { --page-gutter: 48px; } }
