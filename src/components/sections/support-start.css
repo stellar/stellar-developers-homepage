@@ -7,9 +7,9 @@
 .eyebrow--lilac { color: var(--sds-clr-lilac-11); }
 .card-previews__h2 { font-weight: 400; font-size: 28px; line-height: 36px; letter-spacing: -0.01em; color: var(--sds-clr-gray-12); margin: 0; }
 /* Reversed card: fixed deep lilac + light text in both themes (lilac-12 flips to light in Dark). */
-.card-start { display: flex; flex-direction: column; align-items: flex-start; gap: 20px; padding: 32px; border-radius: 16px; background: #20134b; }
-.card-start .card-start__h2 { font-weight: 400; font-size: 32px; line-height: 38px; letter-spacing: -0.04em; color: #fcfcfc; margin: 0; }
-.card-start .card-start__lead { font-size: 16px; line-height: 28px; color: #fcfcfc; margin: 0; }
+.card-start { display: flex; flex-direction: column; align-items: flex-start; gap: 20px; padding: 32px; border-radius: 16px; background: var(--clr-dev-surface-deep); }
+.card-start .card-start__h2 { font-weight: 400; font-size: 32px; line-height: 38px; letter-spacing: -0.04em; color: var(--clr-dev-on-deep); margin: 0; }
+.card-start .card-start__lead { font-size: 16px; line-height: 28px; color: var(--clr-dev-on-deep); margin: 0; }
 .card-start .ctas { padding-top: 8px; }
 /* tertiary button on the dark card keeps SDS light surface so it reads as in the frame */
 .card-start .Button--tertiary { background: #fcfcfc; color: #171717; border-color: #e2e2e2; }

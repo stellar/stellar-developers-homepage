@@ -30,7 +30,7 @@ export function Tooling() {
             </FeatureItem>
           </ul>
           <Link href={docsUrl("/build/building-with-ai")} className="link-primary">
-            Building with AI <Icon.ArrowRight width={14} height={14} aria-hidden />
+            Stellar for Agents <Icon.ArrowRight width={14} height={14} aria-hidden />
           </Link>
         </div>
         <div className="pillar__media">

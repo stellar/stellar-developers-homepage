@@ -29,6 +29,8 @@
 /* Developer-brand tokens (V6 handoff): dot grid = lilac-08 in Light, lilac-11 in Dark */
 .sds-theme-light { --sds-clr-dev-dot-grid: #aa99ec; }
 .sds-theme-dark { --sds-clr-dev-dot-grid: #9e8cfc; }
+/* clr/dev tokens from Edison's 15 Oct notes. These surfaces stay deep in both themes, so one value each. */
+:root { --clr-dev-surface-deep: #20134b; --clr-dev-on-deep: #fcfcfc; --clr-dev-tile-on-deep: #f5f2ff; --clr-dev-connector: #fdfcfe; }
 @media (min-width: 768px) { :root { --page-gutter: 48px; } }
 @media (min-width: 1080px) { :root { --page-gutter: 96px; } }
 
@@ -48,7 +50,7 @@ code, pre, .font-mono { font-family: var(--font-mono); }
 }
 
 /* SDS prose lists add a "-" marker via li::before. Navigation lists opt out. */
-.nav-list { padding: 0; margin: 0; list-style: none; }
+.nav-list, .sds-theme-light .nav-list, .sds-theme-dark .nav-list { padding: 0; margin: 0; list-style: none; }
 .nav-list li { position: static; }
 .nav-list li::before { content: none; }
 
@@ -83,9 +85,9 @@ code, pre, .font-mono { font-family: var(--font-mono); }
 .pillars { background: var(--sds-clr-gray-02); padding-block: 48px; }
 .pillars__grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
 .tile { display: flex; flex-direction: column; background: var(--sds-clr-gray-01); border: 1px solid var(--sds-clr-gray-06); border-radius: 12px; overflow: hidden; min-height: 422px; }
-.tile__media { position: relative; height: 200px; background: var(--sds-clr-lilac-12); display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.tile__media { position: relative; height: 200px; background: var(--clr-dev-surface-deep); display: flex; align-items: center; justify-content: center; overflow: hidden; }
 .tile__pattern { position: absolute; inset: 0; }
-.tile__icon { position: relative; width: 72px; height: 72px; border-radius: 18px; background: var(--sds-clr-lilac-03); border: 1px solid var(--sds-clr-lilac-04); color: var(--sds-clr-lilac-11); display: flex; align-items: center; justify-content: center; }
+.tile__icon { position: relative; width: 72px; height: 72px; border-radius: 18px; background: var(--clr-dev-tile-on-deep); border: 1px solid #ede9fe; color: #5746af; display: flex; align-items: center; justify-content: center; }
 .tile__icon svg { stroke: currentColor; }
 .tile__body { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; flex: 1 0 0; padding: 20px 24px 24px; }
 .tile__num { font-family: var(--font-mono); font-size: 14px; line-height: 20px; color: var(--sds-clr-gray-11); }
@@ -106,7 +108,7 @@ code, pre, .font-mono { font-family: var(--font-mono); }
 .eyebrow { font-weight: 500; font-size: 14px; line-height: 20px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--sds-clr-gray-11); margin: 0; }
 .h2 { font-weight: 400; font-size: 32px; line-height: 38px; letter-spacing: -0.04em; color: var(--sds-clr-gray-12); margin: 0; }
 .lead { font-size: 18px; line-height: 28px; color: var(--sds-clr-gray-11); margin: 0; }
-.features { display: flex; flex-direction: column; gap: 20px; width: 100%; }
+.features { display: flex; flex-direction: column; gap: 24px; width: 100%; }
 .feature { display: flex; gap: 12px; align-items: flex-start; }
 .feature__icon { flex: 0 0 32px; width: 32px; height: 32px; border-radius: 6px; background: var(--sds-clr-gray-03); color: var(--sds-clr-gray-12); display: inline-flex; align-items: center; justify-content: center; }
 .feature__icon svg { stroke: currentColor; }
@@ -162,7 +164,7 @@ code, pre, .font-mono { font-family: var(--font-mono); }
 .pillar-section--alt { background: var(--sds-clr-gray-02); }
 .pillar__note { font-size: 16px; line-height: 28px; color: var(--sds-clr-gray-11); margin: 0; }
 .ctas { display: flex; flex-wrap: wrap; gap: 12px; }
-.feature__links { display: flex; flex-wrap: wrap; gap: 16px; padding-top: 6px; }
+.feature__links { display: flex; flex-wrap: wrap; gap: 16px; padding-top: 6px; } /* 2px copy gap + 6px = 8px under the description */
 .Button .Button__icon svg { stroke: currentColor; }
 
 /* ---------- Code tabs panel (504 × 324) ---------- */
@@ -180,7 +182,7 @@ code, pre, .font-mono { font-family: var(--font-mono); }
 .code-tabs__comment { color: var(--sds-clr-gray-11); }
 
 /* ---------- Theme switcher (System / Light / Dark) ---------- */
-.theme { position: relative; margin-left: 12px; }
+.theme { position: relative; margin-right: 8px; }
 .theme__btn { width: 36px; height: 36px; display: inline-flex; align-items: center; justify-content: center; border-radius: 8px; border: 0; background: transparent; color: var(--sds-clr-gray-12); cursor: pointer; }
 .theme__btn:hover { background: var(--sds-clr-gray-03); }
 .theme__btn:focus-visible { outline: 2px solid var(--sds-clr-lilac-09); outline-offset: 2px; }

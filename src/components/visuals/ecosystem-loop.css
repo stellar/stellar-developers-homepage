@@ -1,18 +1,24 @@
 /* ---------- Flow viz · Ecosystem loop (593 × 480 design frame) ---------- */
 .loop { position: absolute; inset: 0; border-radius: 12px; overflow: hidden; }
 .loop__bg { position: absolute; inset: 0; }
-.loop__ring { position: absolute; inset: 0; width: 100%; height: 100%; }
-.loop__arc { fill: none; stroke: #fbfaff; stroke-opacity: 0.9; stroke-width: 1.5; stroke-dasharray: 1; stroke-dashoffset: 1; animation: loop-draw 0.6s ease-out forwards; }
-.loop__dot { fill: var(--sds-clr-lilac-08); stroke: #fbfaff; stroke-width: 1.5; opacity: 0; animation: loop-fade 0.3s ease-out forwards; }
-.loop .loop__nodes { margin: 0; padding: 0; list-style: none; }
-.loop__nodes li::before { content: none; }
+.loop__ring, .loop__dots { position: absolute; inset: 0; width: 100%; height: 100%; }
+.loop__ring { z-index: 1; }
+.loop__arc { fill: none; stroke: var(--clr-dev-connector); stroke-opacity: 0.9; stroke-width: 1.5; stroke-dasharray: 1; stroke-dashoffset: 1; animation: loop-draw 0.6s ease-out forwards; }
+.loop .loop__nodes { margin: 0; padding: 0; list-style: none; position: relative; z-index: 2; }
+.loop .loop__nodes li::before { content: none; }
 .loop .loop__nodes .loop__node { position: absolute; width: 176px; height: 84px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; border-radius: 12px; background: color-mix(in srgb, var(--sds-clr-gray-01) 84%, transparent); border: 1px solid var(--sds-clr-gray-06); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); font-weight: 500; font-size: 15px; line-height: 20px; color: var(--sds-clr-gray-12); opacity: 0; animation: loop-fade 0.4s ease-out forwards; }
 .loop__node svg, .loop__hub svg { stroke: currentColor; }
 .loop__node svg { color: var(--sds-clr-lilac-11); }
-.loop__hub { position: absolute; left: 224.5px; top: 198px; width: 144px; height: 72px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; border-radius: 12px; background: var(--sds-clr-lilac-09); color: #fcfcfc; font-weight: 500; font-size: 15px; line-height: 20px; }
+.loop__hub { position: absolute; z-index: 2; left: 224.5px; top: 198px; width: 144px; height: 72px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; border-radius: 12px; background: var(--sds-clr-lilac-09); color: #fcfcfc; font-weight: 500; font-size: 15px; line-height: 20px; }
+.loop__dots { z-index: 3; pointer-events: none; }
+.loop__dot { fill: var(--sds-clr-lilac-08); stroke: var(--clr-dev-connector); stroke-width: 1.5; opacity: 0; animation: loop-fade 0.3s ease-out forwards; }
+/* Travelling dot on the hidden full circle (centre 296.5 / 240, r 172), above everything. */
+.loop__traveller { position: absolute; z-index: 4; width: 8px; height: 8px; margin: -4px 0 0 -4px; border-radius: 999px; background: var(--sds-clr-lilac-09); box-shadow: 0 0 0 2px var(--clr-dev-connector); offset-path: circle(172px at 296.5px 240px); offset-rotate: 0deg; offset-distance: 0%; animation: loop-travel 14s linear infinite 1.8s; pointer-events: none; }
 @keyframes loop-draw { to { stroke-dashoffset: 0; } }
 @keyframes loop-fade { to { opacity: 1; } }
+@keyframes loop-travel { from { offset-distance: 0%; } to { offset-distance: 100%; } }
 @media (prefers-reduced-motion: reduce) {
   .loop__arc { stroke-dashoffset: 0; animation: none; }
-  .loop__dot, .loop__node { opacity: 1; animation: none; }
+  .loop__dot, .loop .loop__nodes .loop__node { opacity: 1; animation: none; }
+  .loop__traveller { display: none; }
 }

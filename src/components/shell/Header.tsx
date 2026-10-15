@@ -16,11 +16,11 @@ export function Header() {
         </Link>
         <Nav />
         <div className="flex-1" />
+        <ThemeSwitcher />
         <Link href={docsUrl("")} className="inline-flex items-center gap-2 h-9 px-4 rounded-md text-[14px] font-medium"
               style={{ background: "var(--sds-clr-lilac-09)", color: "#fff" }}>
           Developer Docs <ArrowRight size={14} weight="bold" aria-hidden />
         </Link>
-        <ThemeSwitcher />
       </div>
     </header>
   );
