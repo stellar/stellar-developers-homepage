@@ -50,7 +50,7 @@ export function ThemeSwitcher() {
   return (
     <div ref={root} className="theme">
       <button type="button" className="theme__btn" aria-haspopup="menu" aria-expanded={open} aria-controls={id} aria-label="Appearance" onClick={() => setOpen((v) => !v)}>
-        <Current size={18} aria-hidden />
+        <Current size={16} aria-hidden />
       </button>
       {open ? (
         <div id={id} role="menu" className="theme__menu">
