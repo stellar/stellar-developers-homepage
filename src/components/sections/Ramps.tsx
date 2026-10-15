@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Icon } from "@stellar/design-system";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { PartnerCarousel } from "@/components/ui/PartnerCarousel";
@@ -33,36 +32,33 @@ export function Ramps() {
           <PartnerCarousel partners={PARTNERS} />
           <ul className="ramp-row ramp-row--2 nav-list">
             <li>
-              <Link href="/docs/learn/fundamentals/anchors/" className="ramp-card">
+              <div className="ramp-card ramp-card--static">
                 <div className="ramp-card__top">
                   <span className="ramp-card__mark"><Icon.ShieldTick width={20} height={20} aria-hidden /></span>
-                  <Icon.ArrowUpRight width={16} height={16} aria-hidden className="ramp-card__ext" />
                 </div>
                 <div className="ramp-card__copy">
                   <h3 className="ramp-card__title">Build less, deploy around the world</h3>
                   <p className="ramp-card__body">Providers handle local compliance and KYC, so you can expand without rebuilding.</p>
                 </div>
-              </Link>
+              </div>
             </li>
             <li>
-              <Link href="/docs/build/guides/transactions/" className="ramp-card">
+              <div className="ramp-card ramp-card--static">
                 <div className="ramp-card__top">
                   <span className="ramp-card__mark"><Icon.CurrencyDollarCircle width={20} height={20} aria-hidden /></span>
-                  <Icon.ArrowUpRight width={16} height={16} aria-hidden className="ramp-card__ext" />
                 </div>
                 <div className="ramp-card__copy">
                   <h3 className="ramp-card__title">Settle in local currency</h3>
                   <p className="ramp-card__body">Path payments can convert assets in transit, so senders and recipients can use different currencies.</p>
                 </div>
-              </Link>
+              </div>
             </li>
           </ul>
         </div>
 
         <div className="ctas">
-          <ButtonLink href="/docs/tools/ramps/" variant="primary" size="md" icon={<Icon.ArrowRight width={14} height={14} aria-hidden />}>Explore ramp docs</ButtonLink>
-          {/* Destination TBC: no "regional starter pack" page exists in the docs yet. Pointing at the ramps overview until DevRel confirms. */}
-          <ButtonLink href="/docs/tools/ramps/" variant="tertiary" size="md" icon={<Icon.ArrowRight width={14} height={14} aria-hidden />}>Explore the regional starter pack</ButtonLink>
+          <ButtonLink href="https://developers.stellar.org/docs/tools/ramps" variant="primary" size="md" icon={<Icon.ArrowRight width={14} height={14} aria-hidden />}>Explore ramp docs</ButtonLink>
+          <ButtonLink href="https://www.regionalstarterpack.com/" variant="tertiary" size="md" icon={<Icon.ArrowRight width={14} height={14} aria-hidden />}>Explore the regional starter pack</ButtonLink>
         </div>
       </div>
     </section>

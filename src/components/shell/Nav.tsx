@@ -4,11 +4,11 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const NAV = [
-  { label: "Build", href: "#build", section: "build" },
+  { label: "Build", href: "https://developers.stellar.org/docs/build", section: "build" },
   { label: "Resources", href: "#tooling", section: "tooling" },
-  { label: "Docs", href: "/docs/" },
-  { label: "Ecosystem", href: "#ecosystem", section: "ecosystem" },
-  { label: "Blog", href: "https://stellar.org/blog" },
+  { label: "Docs", href: "https://developers.stellar.org/docs" },
+  { label: "Ecosystem", href: "https://stellar.org/ecosystem", section: "ecosystem" },
+  { label: "Blog", href: "https://stellar.org/blog/developers" },
 ];
 
 /** Primary nav. The section in view gets the lilac underline, mirroring the Mintlify docs nav. */

@@ -47,3 +47,5 @@
 .carousel__dot[aria-current="true"] { width: 16px; background: var(--sds-clr-lilac-09); }
 @media (max-width: 767px) { .carousel__item { flex-basis: 85%; } }
 @media (min-width: 768px) and (max-width: 1079px) { .carousel__item { flex-basis: calc((100% - 16px) / 2); } }
+
+.ramp-card--static:hover { border-color: var(--sds-clr-gray-06); }

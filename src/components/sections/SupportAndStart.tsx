@@ -36,15 +36,15 @@ export function SupportAndStart() {
             <p className="eyebrow eyebrow--lilac">Developer Previews</p>
             <h2 className="card-previews__h2">What’s coming to the network</h2>
             <p className="pillar__note">Previews showcase the latest developer tooling releases, feature updates and protocol capabilities.</p>
-            <Link href="https://stellar.org/blog" className="link-primary">All developer previews <Icon.ArrowRight width={14} height={14} aria-hidden /></Link>
+            <Link href="https://stellar.org/blog/developers/" className="link-primary">All developer previews <Icon.ArrowRight width={14} height={14} aria-hidden /></Link>
           </div>
           {/* 10 · Start building (reversed) */}
           <div id="start" className="card-start">
             <h2 className="card-start__h2">Start building</h2>
             <p className="card-start__lead">Install the Stellar CLI, fund a testnet account, add trustlines and send your first payment in minutes.</p>
             <div className="ctas">
-              <ButtonLink href="/docs/build/smart-contracts/getting-started/" variant="primary" size="lg" icon={<Icon.ArrowRight width={14} height={14} aria-hidden />}>Quickstart</ButtonLink>
-              <ButtonLink href="https://discord.gg/stellardev" variant="tertiary" size="lg" icon={<Icon.ArrowUpRight width={14} height={14} aria-hidden />}>Join the community</ButtonLink>
+              <ButtonLink href="https://developers.stellar.org/docs/tools/quickstart" variant="primary" size="lg" icon={<Icon.ArrowRight width={14} height={14} aria-hidden />}>Quickstart</ButtonLink>
+              <ButtonLink href="https://discord.gg/Q2xfSRAhS" variant="tertiary" size="lg" icon={<Icon.ArrowUpRight width={14} height={14} aria-hidden />}>Join the community</ButtonLink>
             </div>
           </div>
         </div>

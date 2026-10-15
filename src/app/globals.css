@@ -195,3 +195,6 @@ code, pre, .font-mono { font-family: var(--font-mono); }
 .nav__link { display: inline-flex; align-items: center; padding: 0 10px; font-size: 14px; line-height: 20px; color: var(--sds-clr-gray-11); text-decoration: none; border-bottom: 2px solid transparent; margin-bottom: -1px; }
 .nav__link:hover { color: var(--sds-clr-gray-12); }
 .nav__link[aria-current="true"] { color: var(--sds-clr-gray-12); font-weight: 500; border-bottom-color: var(--sds-clr-lilac-09); }
+
+.inline-link { color: var(--sds-clr-lilac-11); text-decoration: underline; text-underline-offset: 3px; }
+.inline-link:hover { color: var(--sds-clr-lilac-09); }

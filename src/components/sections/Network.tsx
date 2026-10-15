@@ -23,7 +23,7 @@ export function Network() {
               Authorization, freeze, and clawback controls are set by the issuer and follow the asset. No contracts required.
             </FeatureItem>
           </ul>
-          <Link href="/docs/learn/fundamentals/" className="link-primary">
+          <Link href="https://developers.stellar.org/docs/learn/fundamentals" className="link-primary">
             Network fundamentals <Icon.ArrowRight width={14} height={14} aria-hidden />
           </Link>
         </div>
