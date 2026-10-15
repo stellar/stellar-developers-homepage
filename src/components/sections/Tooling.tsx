@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Icon } from "@stellar/design-system";
 import { FeatureItem } from "@/components/ui/FeatureItem";
 import { MediaModule } from "@/components/ui/MediaModule";
@@ -14,19 +15,22 @@ export function Tooling() {
           <h2 id="tooling-h2" className="h2">Tools for developers and agents</h2>
           <p className="pillar__note">Build, test, and deploy with the Stellar CLI, JavaScript and Rust SDKs. Put your agent to work with MCP and skills. Reach network data with Stellar RPC.</p>
           <ul className="features nav-list">
-            <FeatureItem icon={<Icon.TerminalSquare width={16} height={16} />} title="Stellar CLI" link={{ label: "Stellar CLI docs", href: "/docs/tools/cli/" }}>
+            <FeatureItem icon={<Icon.TerminalSquare width={16} height={16} />} title="Stellar CLI">
               Deploy contracts, issue assets and manage accounts from the terminal.
             </FeatureItem>
-            <FeatureItem icon={<Icon.CodeBrowser width={16} height={16} />} title="SDKs" link={{ label: "SDK docs", href: "/docs/tools/sdks/" }}>
+            <FeatureItem icon={<Icon.CodeBrowser width={16} height={16} />} title="SDKs">
               JavaScript, Go and Rust maintained by SDF; Python, Java, Kotlin, .NET, PHP, iOS and Flutter from the community.
             </FeatureItem>
-            <FeatureItem icon={<Icon.CpuChip01 width={16} height={16} />} title="MCP and skills" links={[{ label: "Stellar Raven MCP", href: "https://raven.stellar.org" }, { label: "Stellar Skills", href: "https://skills.stellar.org" }]}>
+            <FeatureItem icon={<Icon.CpuChip01 width={16} height={16} />} title="MCP and skills">
               Stellar Raven gives agents Stellar docs, live ecosystem data and playbooks; prebuilt skills cover contracts, wallets, assets and payments.
             </FeatureItem>
-            <FeatureItem icon={<Icon.CreditCard02 width={16} height={16} />} title="x402" link={{ label: "x402 docs", href: "/docs/build/apps/x402/" }}>
+            <FeatureItem icon={<Icon.CreditCard02 width={16} height={16} />} title="x402">
               Agent payments over HTTP, so your agent can pay for what it uses.
             </FeatureItem>
           </ul>
+          <Link href="/docs/build/building-with-ai/" className="link-primary">
+            Building with AI <Icon.ArrowRight width={14} height={14} aria-hidden />
+          </Link>
         </div>
         <div className="pillar__media">
           <MediaModule label="Tooling quick starts: CLI, SDKs, Skills, MCP and x402 commands">

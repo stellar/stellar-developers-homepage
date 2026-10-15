@@ -60,7 +60,7 @@ export function Ramps() {
         </div>
 
         <div className="ctas">
-          <ButtonLink href="/docs/tools/ramps/" variant="tertiary" size="md" icon={<Icon.ArrowRight width={14} height={14} aria-hidden />}>Explore ramp docs</ButtonLink>
+          <ButtonLink href="/docs/tools/ramps/" variant="primary" size="md" icon={<Icon.ArrowRight width={14} height={14} aria-hidden />}>Explore ramp docs</ButtonLink>
           {/* Destination TBC: no "regional starter pack" page exists in the docs yet. Pointing at the ramps overview until DevRel confirms. */}
           <ButtonLink href="/docs/tools/ramps/" variant="tertiary" size="md" icon={<Icon.ArrowRight width={14} height={14} aria-hidden />}>Explore the regional starter pack</ButtonLink>
         </div>
