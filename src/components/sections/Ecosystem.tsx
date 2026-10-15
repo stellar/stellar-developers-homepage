@@ -2,6 +2,7 @@ import { Icon } from "@stellar/design-system";
 import { FeatureItem } from "@/components/ui/FeatureItem";
 import { VizModule } from "@/components/ui/VizModule";
 import { EcosystemLoop } from "@/components/visuals/EcosystemLoop";
+import { docsUrl } from "@/lib/docs";
 
 // 07 · Ecosystem — V6 Figma 1679:5377 (media right). Copy from the 10/13 deck.
 export function Ecosystem() {
@@ -18,7 +19,7 @@ export function Ecosystem() {
             <FeatureItem icon={<Icon.LineChartUp01 width={16} height={16} />} title="Active markets" link={{ label: "Explore markets", href: "https://stellar.org/ecosystem#apply" }}>
               Integrate lending, credit, vaults, and derivatives protocols.
             </FeatureItem>
-            <FeatureItem icon={<Icon.SwitchHorizontal01 width={16} height={16} />} title="Liquidity options" link={{ label: "Learn about liquidity on Stellar", href: "/docs/learn/fundamentals/liquidity-on-stellar-sdex-liquidity-pools" }}>
+            <FeatureItem icon={<Icon.SwitchHorizontal01 width={16} height={16} />} title="Liquidity options" link={{ label: "Learn about liquidity on Stellar", href: docsUrl("/learn/fundamentals/liquidity-on-stellar-sdex-liquidity-pools") }}>
               Access liquidity on Stellar and across other networks through DEXs, AMMs, and aggregators.
             </FeatureItem>
           </ul>

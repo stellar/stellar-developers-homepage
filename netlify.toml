@@ -2,6 +2,10 @@
   command = "npm run build"
   publish = "out"
 
+# Production is served from developers.stellar.org, so docs links are relative. Previews keep the absolute address.
+[context.production.environment]
+  NEXT_PUBLIC_DOCS_BASE = "/docs"
+
 # Docs live on Mintlify, served under /docs on this domain (subpath hosting).
 # The target host is set in Mintlify's dashboard once the subpath is configured.
 [[redirects]]

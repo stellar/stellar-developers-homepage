@@ -2,6 +2,7 @@ import { Icon } from "@stellar/design-system";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { PartnerCarousel } from "@/components/ui/PartnerCarousel";
 import "./ramps.css";
+import { docsUrl } from "@/lib/docs";
 
 // 06 · Ramps — V6 Figma 1679:5357. Copy from the 10/13 deck; partner cards back per Kate (V6 README).
 // Partner logos exported from the Figma board (approved per Maz, 15 Oct).
@@ -57,7 +58,7 @@ export function Ramps() {
         </div>
 
         <div className="ctas">
-          <ButtonLink href="/docs/tools/ramps" variant="primary" size="md" icon={<Icon.ArrowRight width={14} height={14} aria-hidden />}>Explore ramp docs</ButtonLink>
+          <ButtonLink href={docsUrl("/tools/ramps")} variant="primary" size="md" icon={<Icon.ArrowRight width={14} height={14} aria-hidden />}>Explore ramp docs</ButtonLink>
           <ButtonLink href="https://www.regionalstarterpack.com/" variant="tertiary" size="md" icon={<Icon.ArrowRight width={14} height={14} aria-hidden />}>Explore the regional starter pack</ButtonLink>
         </div>
       </div>

@@ -5,6 +5,7 @@ import { VizModule } from "@/components/ui/VizModule";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { BuildGrowScale } from "@/components/visuals/BuildGrowScale";
 import "./support-start.css";
+import { docsUrl } from "@/lib/docs";
 
 // 08 · Support + 09 · Developer Previews + 10 · Start building — V6 Figma 1679:5675.
 export function SupportAndStart() {
@@ -43,7 +44,7 @@ export function SupportAndStart() {
             <h2 className="card-start__h2">Start building</h2>
             <p className="card-start__lead">Install the Stellar CLI, fund a testnet account, add trustlines and send your first payment in minutes.</p>
             <div className="ctas">
-              <ButtonLink href="/docs/tools/quickstart" variant="primary" size="lg" icon={<Icon.ArrowRight width={14} height={14} aria-hidden />}>Quickstart</ButtonLink>
+              <ButtonLink href={docsUrl("/tools/quickstart")} variant="primary" size="lg" icon={<Icon.ArrowRight width={14} height={14} aria-hidden />}>Quickstart</ButtonLink>
               <ButtonLink href="https://discord.gg/Q2xfSRAhS" variant="tertiary" size="lg" icon={<Icon.ArrowUpRight width={14} height={14} aria-hidden />}>Join the community</ButtonLink>
             </div>
           </div>

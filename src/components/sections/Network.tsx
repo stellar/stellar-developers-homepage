@@ -3,6 +3,7 @@ import { Icon } from "@stellar/design-system";
 import { FeatureItem } from "@/components/ui/FeatureItem";
 import { MediaModule } from "@/components/ui/MediaModule";
 import { LedgerPanel } from "@/components/panels/LedgerPanel";
+import { docsUrl } from "@/lib/docs";
 
 // 03 · Network — V6 Figma 1679:5132. Copy from the 10/13 deck.
 export function Network() {
@@ -23,7 +24,7 @@ export function Network() {
               Authorization, freeze, and clawback controls are set by the issuer and follow the asset. No contracts required.
             </FeatureItem>
           </ul>
-          <Link href="/docs/learn/fundamentals" className="link-primary">
+          <Link href={docsUrl("/learn/fundamentals")} className="link-primary">
             Network fundamentals <Icon.ArrowRight width={14} height={14} aria-hidden />
           </Link>
         </div>

@@ -3,6 +3,7 @@ import { StellarLogo } from "@/components/ui/StellarLogo";
 import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 import { ThemeSwitcher } from "@/components/shell/ThemeSwitcher";
 import { Nav } from "@/components/shell/Nav";
+import { docsUrl } from "@/lib/docs";
 
 // Header decision (13 Oct): one primary action, Developer Docs → /docs. No search, no theme toggle, no GitHub.
 export function Header() {
@@ -15,7 +16,7 @@ export function Header() {
         </Link>
         <Nav />
         <div className="flex-1" />
-        <Link href="/docs" className="inline-flex items-center gap-2 h-9 px-4 rounded-md text-[14px] font-medium"
+        <Link href={docsUrl("")} className="inline-flex items-center gap-2 h-9 px-4 rounded-md text-[14px] font-medium"
               style={{ background: "var(--sds-clr-lilac-09)", color: "#fff" }}>
           Developer Docs <ArrowRight size={14} weight="bold" aria-hidden />
         </Link>

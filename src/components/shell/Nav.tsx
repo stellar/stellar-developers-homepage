@@ -2,11 +2,12 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { docsUrl } from "@/lib/docs";
 
 const NAV = [
-  { label: "Build", href: "/docs/build", section: "build" },
+  { label: "Build", href: docsUrl("/build"), section: "build" },
   { label: "Resources", href: "#tooling", section: "tooling" },
-  { label: "Docs", href: "/docs" },
+  { label: "Docs", href: docsUrl("") },
   { label: "Ecosystem", href: "https://stellar.org/ecosystem", section: "ecosystem" },
   { label: "Blog", href: "https://stellar.org/blog/developers" },
 ];

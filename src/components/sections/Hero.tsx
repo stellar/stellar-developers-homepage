@@ -1,6 +1,7 @@
 import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { DotGridBackground } from "@/components/visuals/DotGridBackground";
+import { docsUrl } from "@/lib/docs";
 
 // 01 · Hero — V6 Option B (dots only). Figma 1696:6224 / 1679:4918.
 // Stats and labels follow the V6 page frame (copy 10/13); the Option B frame's
@@ -27,7 +28,7 @@ export function Hero() {
             ))}
           </dl>
           <div className="hero__ctas">
-            <ButtonLink href="/docs/tools/quickstart" variant="primary" size="lg" icon={<ArrowRight size={16} weight="bold" aria-hidden />}>
+            <ButtonLink href={docsUrl("/tools/quickstart")} variant="primary" size="lg" icon={<ArrowRight size={16} weight="bold" aria-hidden />}>
               Get started
             </ButtonLink>
           </div>
