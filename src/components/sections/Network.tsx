@@ -1,6 +1,6 @@
-import Link from "next/link";
 import { Icon } from "@stellar/design-system";
 import { FeatureItem } from "@/components/ui/FeatureItem";
+import { ButtonLink } from "@/components/ui/ButtonLink";
 import { MediaModule } from "@/components/ui/MediaModule";
 import { LedgerPanel } from "@/components/panels/LedgerPanel";
 import { docsUrl } from "@/lib/docs";
@@ -13,6 +13,10 @@ export function Network() {
         <div className="pillar__copy">
           <p className="eyebrow">Network</p>
           <h2 id="network-h2" className="h2">A foundation of network reliability</h2>
+          <p className="pillar__note">Fast finality, trusted validators, and native asset controls.</p>
+          <div className="ctas">
+            <ButtonLink href={docsUrl("/learn/fundamentals")} variant="primary" size="md" icon={<Icon.ArrowRight width={14} height={14} aria-hidden />}>Network fundamentals</ButtonLink>
+          </div>
           <ul className="features nav-list">
             <FeatureItem icon={<Icon.BarChart07 width={16} height={16} />} title="Finality in seconds">
               Ledgers close in ~5 seconds, and their transactions are final when they do.
@@ -24,9 +28,6 @@ export function Network() {
               Authorization, freeze, and clawback controls are set by the issuer and follow the asset. No contracts required.
             </FeatureItem>
           </ul>
-          <Link href={docsUrl("/learn/fundamentals")} className="link-primary">
-            Network fundamentals <Icon.ArrowRight width={14} height={14} aria-hidden />
-          </Link>
         </div>
         <div className="pillar__media">
           <MediaModule label="Recent mainnet ledgers, sample data">
