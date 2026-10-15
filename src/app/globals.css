@@ -41,3 +41,8 @@ code, pre, .font-mono { font-family: var(--font-mono); }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
 }
+
+/* SDS prose lists add a "-" marker via li::before. Navigation lists opt out. */
+.nav-list { padding: 0; margin: 0; list-style: none; }
+.nav-list li { position: static; }
+.nav-list li::before { content: none; }

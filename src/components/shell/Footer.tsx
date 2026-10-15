@@ -12,8 +12,8 @@ export function Footer() {
   return (
     <footer className="w-full border-t" style={{ background: "var(--sds-clr-gray-01)", borderColor: "var(--sds-clr-gray-06)" }}>
       <div className="container-page py-16">
-        <div className="grid grid-cols-2 tablet:grid-cols-6 gap-8">
-          <div className="col-span-2">
+        <div className="grid grid-cols-2 tablet:grid-cols-4 desktop:grid-cols-6 gap-8">
+          <div className="col-span-2 tablet:col-span-4 desktop:col-span-2">
             <Logo.Stellar width={96} height={24} />
             <p className="mt-4 max-w-[288px] text-[14px] leading-[22px]" style={{ color: "var(--sds-clr-gray-11)" }}>
               Build where money already moves around the world
@@ -22,7 +22,7 @@ export function Footer() {
           {COLUMNS.map((c) => (
             <div key={c.title}>
               <h2 className="text-[12px] leading-4 font-semibold uppercase tracking-wide" style={{ color: "var(--sds-clr-gray-11)" }}>{c.title}</h2>
-              <ul className="mt-6 space-y-2 text-[14px] leading-[22px]">
+              <ul className="nav-list mt-6 space-y-2 text-[14px] leading-[22px]">
                 {c.links.map(([label, href]) => (
                   <li key={label}><Link href={href} className="hover:underline underline-offset-4" style={{ color: "var(--sds-clr-gray-12)" }}>{label}</Link></li>
                 ))}
