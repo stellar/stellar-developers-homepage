@@ -24,6 +24,10 @@ export function Ramps() {
             <p className="eyebrow">Ramps</p>
             <h2 id="ramps-h2" className="h2">Reach more local markets with every build</h2>
             <p className="pillar__note">Open-access ramps connect your app to cash, bank transfers, and local payment methods.</p>
+            <div className="ctas">
+          <ButtonLink href={docsUrl("/tools/ramps")} variant="primary" size="md" icon={<Icon.ArrowRight width={14} height={14} aria-hidden />}>Explore ramp docs</ButtonLink>
+          <ButtonLink href="https://www.regionalstarterpack.com/" variant="tertiary" size="md" icon={<Icon.ArrowRight width={14} height={14} aria-hidden />}>Explore the regional starter pack</ButtonLink>
+            </div>
           </div>
         </div>
 
@@ -55,10 +59,6 @@ export function Ramps() {
           </ul>
         </div>
 
-        <div className="ctas">
-          <ButtonLink href={docsUrl("/tools/ramps")} variant="primary" size="md" icon={<Icon.ArrowRight width={14} height={14} aria-hidden />}>Explore ramp docs</ButtonLink>
-          <ButtonLink href="https://www.regionalstarterpack.com/" variant="tertiary" size="md" icon={<Icon.ArrowRight width={14} height={14} aria-hidden />}>Explore the regional starter pack</ButtonLink>
-        </div>
       </div>
     </section>
   );
