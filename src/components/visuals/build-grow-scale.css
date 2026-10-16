@@ -1,10 +1,10 @@
 /* ---------- Flow viz · Build Grow Scale (593 × 480 design frame) ---------- */
 .ladder { position: absolute; inset: 0; border-radius: 12px; overflow: hidden; }
 .ladder__bg { position: absolute; inset: 0; }
-.ladder__lines { position: absolute; inset: 0; width: 100%; height: 100%; }
+.ladder__lines { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 3; pointer-events: none; } /* dots sit on the card edges, above the cards */
 .ladder__line { stroke: var(--clr-dev-connector); stroke-width: 2; stroke-dasharray: 1; stroke-dashoffset: 1; animation: ladder-draw 0.6s ease-out forwards; }
 .ladder__dot { fill: var(--sds-clr-lilac-09); stroke: var(--sds-clr-gray-01); stroke-width: 2; opacity: 0; animation: ladder-fade 0.3s ease-out forwards; }
-.ladder .ladder__nodes { margin: 0; padding: 0; list-style: none; }
+.ladder .ladder__nodes { margin: 0; padding: 0; list-style: none; position: relative; z-index: 2; }
 .ladder .ladder__nodes li::before { content: none; }
 .ladder .ladder__nodes .ladder__node { position: absolute; left: 204px; width: 184px; height: 84px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; border-radius: 12px; background: var(--sds-clr-gray-01); border: 1px solid var(--sds-clr-gray-06); font-weight: 500; font-size: 15px; line-height: 20px; color: var(--sds-clr-gray-12); opacity: 0; animation: ladder-fade 0.4s ease-out forwards; }
 .ladder__node svg { stroke: currentColor; color: var(--sds-clr-lilac-11); }
