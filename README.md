@@ -2,7 +2,7 @@
 
 The developer front door for Stellar. Static Next.js site, served at the root of developers.stellar.org, with the docs proxied to Mintlify under `/docs`.
 
-Stack: Next.js (static export), TypeScript, Tailwind for layout, [@stellar/design-system](https://github.com/stellar/stellar-design-system) for components and tokens, Phosphor icons, framer-motion, Paper Shaders. Deployed on Netlify.
+Stack: Next.js (static export), TypeScript, Tailwind for layout, [@stellar/design-system](https://github.com/stellar/stellar-design-system) for components and tokens, Phosphor icons, Paper Shaders. Motion is CSS only. Deployed on Netlify.
 
 ```bash
 npm ci
