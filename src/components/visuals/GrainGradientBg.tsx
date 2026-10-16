@@ -23,9 +23,8 @@ export function GrainGradientBg({ className }: { className?: string }) {
     return <div className={className} aria-hidden style={{ background: "radial-gradient(120% 90% at 85% 20%, #d5cdf9 0%, #634ec1 45%, #000a0f 100%)" }} />;
   }
   return (
+    <div className={className} aria-hidden role="presentation">
     <GrainGradient
-      className={className}
-      aria-hidden
       colors={["#634ec1", "#d5cdf9", "#d7cbc6"]}
       colorBack="#000a0f"
       softness={0.7}
@@ -37,5 +36,6 @@ export function GrainGradientBg({ className }: { className?: string }) {
       rotation={0}
       style={{ width: "100%", height: "100%" }}
     />
+    </div>
   );
 }
