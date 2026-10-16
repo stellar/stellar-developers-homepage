@@ -92,7 +92,7 @@ code, pre, .font-mono { font-family: var(--font-mono); }
 .tile__media { position: relative; height: 200px; background: var(--clr-dev-surface-deep); display: flex; align-items: center; justify-content: center; overflow: hidden; }
 .tile__pattern { position: absolute; left: 50%; top: 50%; width: 600px; height: 480px; transform: translate(-50%, -50%); color: var(--sds-clr-dev-dot-grid); }
 .tile__clear { position: absolute; left: 50%; top: 50%; width: 220px; height: 220px; border-radius: 999px; background: var(--clr-dev-surface-deep); transform: translate(-50%, -50%); }
-.tile__icon { position: relative; width: 112px; height: 112px; border-radius: 28px; background: var(--clr-dev-tile-on-deep); border: 1px solid var(--sds-clr-lilac-04); color: var(--sds-clr-lilac-11); display: flex; align-items: center; justify-content: center; }
+.tile__icon { position: relative; width: 72px; height: 72px; border-radius: 18px; background: var(--clr-dev-tile-on-deep); border: 1px solid var(--sds-clr-lilac-04); color: var(--sds-clr-lilac-11); display: flex; align-items: center; justify-content: center; }
 .tile__icon svg { stroke: currentColor; }
 .tile__body { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; flex: 1 0 0; padding: 20px 24px 24px; }
 .tile__num { font-family: var(--font-mono); font-size: 14px; line-height: 20px; color: var(--sds-clr-gray-11); }

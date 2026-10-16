@@ -22,7 +22,7 @@ export function PillarCards() {
               <div className="tile__media" aria-hidden>
                 <ScatteredDots className="tile__pattern" />
                 <span className="tile__clear" />
-                <div className="tile__icon"><t.Icon width={56} height={56} /></div>
+                <div className="tile__icon"><t.Icon width={36} height={36} /></div>
               </div>
               <div className="tile__body">
                 <span className="tile__num">{t.n}</span>
