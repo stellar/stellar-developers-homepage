@@ -1,7 +1,7 @@
 "use client";
 
 import { useId, useState } from "react";
-import { CopyText, Icon } from "@stellar/design-system";
+import { CopyButton } from "@/components/ui/CopyButton";
 
 export type CodeTab = { id: string; label: string; lines: string[]; copy?: string };
 
@@ -22,15 +22,21 @@ export function CodeTabs({ tabs, defaultTab, showCopy = false, label }: { tabs: 
           {tabs.map((t) => (
             <button key={t.id} role="tab" id={`${base}-${t.id}`} aria-selected={t.id === tab.id} aria-controls={`${base}-${t.id}-panel`}
               tabIndex={t.id === tab.id ? 0 : -1} className="code-tabs__tab" onClick={() => setActive(t.id)}
-              onKeyDown={(e) => { const i = tabs.findIndex((x) => x.id === tab.id); if (e.key === "ArrowRight") setActive(tabs[(i + 1) % tabs.length].id); if (e.key === "ArrowLeft") setActive(tabs[(i - 1 + tabs.length) % tabs.length].id); }}>
+              onKeyDown={(e) => {
+                const i = tabs.findIndex((x) => x.id === tab.id);
+                let next: string | null = null;
+                if (e.key === "ArrowRight") next = tabs[(i + 1) % tabs.length].id;
+                if (e.key === "ArrowLeft") next = tabs[(i - 1 + tabs.length) % tabs.length].id;
+                if (e.key === "Home") next = tabs[0].id;
+                if (e.key === "End") next = tabs[tabs.length - 1].id;
+                if (next) { e.preventDefault(); setActive(next); document.getElementById(`${base}-${next}`)?.focus(); }
+              }}>
               {t.label}
             </button>
           ))}
         </div>
         {showCopy ? (
-          <CopyText textToCopy={copyText} doneLabel="Copied">
-            <button type="button" className="code-tabs__copy"><Icon.Copy01 width={14} height={14} aria-hidden /> Copy</button>
-          </CopyText>
+          <CopyButton text={copyText} label="Copy commands" className="code-tabs__copy">Copy</CopyButton>
         ) : null}
       </div>
       <pre role="tabpanel" id={`${base}-${tab.id}-panel`} aria-labelledby={`${base}-${tab.id}`} className="code-tabs__body">

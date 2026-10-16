@@ -1,6 +1,7 @@
 "use client";
 
-import { Badge, CopyText, Icon } from "@stellar/design-system";
+import { Badge, Icon } from "@stellar/design-system";
+import { CopyButton } from "@/components/ui/CopyButton";
 
 // Ledger panel on static sample data (Maz, 8 Oct): header + recent ledgers + footnote,
 // fitted to the 504 × 324 code slot. No live fetch; a later version may read Stellar RPC.
@@ -32,10 +33,7 @@ export function LedgerPanel() {
             <tr key={r.seq}>
               <td>{r.seq}</td>
               <td className="ledger__hash">
-                <span>{r.hash}</span>
-                <CopyText textToCopy={r.hash} doneLabel="Copied">
-                  <button type="button" className="copy-btn" aria-label={`Copy hash ${r.hash}`}><Icon.Copy01 width={14} height={14} aria-hidden /></button>
-                </CopyText>
+                <span className="ledger__copy"><span>{r.hash}</span><CopyButton text={r.hash} label={`Copy hash ${r.hash}`} className="copy-btn" /></span>
               </td>
               <td className="num">{r.txs}</td>
               <td className="num">{r.closed}</td>
