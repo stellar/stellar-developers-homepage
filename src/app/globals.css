@@ -200,8 +200,17 @@ code, pre, .font-mono { font-family: var(--font-mono); }
 /* ---------- Header nav: Mintlify-style active underline ---------- */
 .nav { display: flex; align-items: stretch; height: 64px; gap: 4px; }
 .nav__link { display: inline-flex; align-items: center; padding: 0 10px; font-size: 14px; line-height: 20px; color: var(--sds-clr-gray-11); text-decoration: none; border-bottom: 2px solid transparent; margin-bottom: -1px; }
-.nav__link:hover { color: var(--sds-clr-gray-12); }
-.nav__link[aria-current="true"] { color: var(--sds-clr-gray-12); font-weight: 500; border-bottom-color: var(--sds-clr-lilac-09); }
+.nav__link:hover, .nav__link:focus-visible, .nav__link[aria-expanded="true"] { color: var(--sds-clr-gray-12); border-bottom-color: var(--sds-clr-lilac-09); outline: none; }
+.nav__link--btn { background: none; border-top: 0; border-left: 0; border-right: 0; font: inherit; cursor: pointer; gap: 6px; }
+.nav__link--btn svg { transition: transform 0.15s; }
+.nav__link[aria-expanded="true"] svg { transform: rotate(180deg); }
+.nav__group { position: relative; display: flex; align-items: stretch; }
+/* Resources menu (Figma 1475:5749): 360px, radius 8, 8px padding, items 12/10 */
+.menu { position: absolute; left: 0; top: calc(100% + 8px); width: 360px; padding: 8px; display: flex; flex-direction: column; gap: 2px; border-radius: 8px; background: var(--sds-clr-gray-01); border: 1px solid var(--sds-clr-gray-06); box-shadow: 0 12px 32px rgba(0,0,0,0.08); z-index: 60; }
+.menu__item { display: flex; flex-direction: column; gap: 2px; padding: 10px 12px; border-radius: 8px; text-decoration: none; color: var(--sds-clr-gray-11); }
+.menu__item:hover, .menu__item:focus-visible { background: var(--sds-clr-gray-03); outline: none; }
+.menu__title { font-weight: 500; font-size: 15px; line-height: 20px; color: var(--sds-clr-gray-12); }
+.menu__sub { font-size: 13px; line-height: 20px; color: var(--sds-clr-gray-11); }
 
 .inline-link { color: var(--sds-clr-lilac-11); text-decoration: underline; text-underline-offset: 3px; }
 .inline-link:hover { color: var(--sds-clr-lilac-09); }

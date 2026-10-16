@@ -16,13 +16,13 @@ export function Header() {
         </Link>
         <Nav />
         <div className="flex-1" />
-        {/* Actions: 36px toggle + Developer Docs, 8px gap (V7 header 1884:10876) */}
+        {/* Actions: Developer Docs + 36px toggle to its right (Maz, 16 Oct), 8px gap */}
         <div className="flex items-center gap-2">
-          <ThemeSwitcher />
           <Link href={docsUrl("")} className="inline-flex items-center gap-1 h-9 px-3 rounded-lg text-[14px] leading-5 font-semibold"
                 style={{ background: "var(--sds-clr-lilac-09)", color: "#fff" }}>
             Developer Docs <ArrowRight size={16} weight="bold" aria-hidden />
           </Link>
+          <ThemeSwitcher />
         </div>
       </div>
     </header>
