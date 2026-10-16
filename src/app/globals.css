@@ -46,6 +46,10 @@ code, pre, .font-mono { font-family: var(--font-mono); }
 
 .container-page { width: 100%; max-width: calc(var(--page-max) + 2 * var(--page-gutter)); margin-inline: auto; padding-inline: var(--page-gutter); }
 
+/* Focus: one lilac ring for keyboard users; no ring after mouse or touch clicks. */
+:focus:not(:focus-visible) { outline: none; }
+a:focus-visible, button:focus-visible, [role="tab"]:focus-visible, [tabindex]:focus-visible { outline: 2px solid var(--sds-clr-lilac-09); outline-offset: 3px; border-radius: 4px; }
+
 .skip-link { position: absolute; left: -9999px; top: 8px; z-index: 100; padding: 8px 12px; background: var(--sds-clr-lilac-09); color: #fff; border-radius: 6px; }
 .skip-link:focus { left: 8px; }
 
