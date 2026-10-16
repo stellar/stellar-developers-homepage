@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useId, useRef, useState } from "react";
+import { useEffect, useId, useRef, useState, useSyncExternalStore } from "react";
 import { Monitor, Sun, Moon, Check } from "@phosphor-icons/react/dist/ssr";
 
 type Pref = "system" | "light" | "dark";
@@ -16,6 +16,11 @@ export function applyTheme(pref: Pref) {
   el.style.colorScheme = dark ? "dark" : "light";
 }
 
+const listeners = new Set<() => void>();
+function readPref(): Pref { try { const v = localStorage.getItem(KEY); return v === "light" || v === "dark" ? v : "system"; } catch { return "system"; } }
+function subscribePref(cb: () => void) { listeners.add(cb); window.addEventListener("storage", cb); return () => { listeners.delete(cb); window.removeEventListener("storage", cb); }; }
+function writePref(p: Pref) { try { localStorage.setItem(KEY, p); } catch {} listeners.forEach((l) => l()); }
+
 const OPTIONS: { value: Pref; label: string; Icon: typeof Monitor }[] = [
   { value: "system", label: "System", Icon: Monitor },
   { value: "light", label: "Light", Icon: Sun },
@@ -23,13 +28,15 @@ const OPTIONS: { value: Pref; label: string; Icon: typeof Monitor }[] = [
 ];
 
 export function ThemeSwitcher() {
-  const [pref, setPref] = useState<Pref>("system");
+  // Saved preference as an external store: server snapshot is "system", client reads localStorage after hydration.
+  const pref = useSyncExternalStore(subscribePref, readPref, () => "system" as Pref);
+  // Render the neutral icon until mounted so server and client markup match.
+  const mounted = useSyncExternalStore(() => () => {}, () => true, () => false);
   const [open, setOpen] = useState(false);
   const id = useId();
   const root = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    try { const saved = localStorage.getItem(KEY) as Pref | null; if (saved === "light" || saved === "dark" || saved === "system") setPref(saved); } catch {}
     const mq = window.matchMedia("(prefers-color-scheme: dark)");
     const onChange = () => { try { if ((localStorage.getItem(KEY) ?? "system") === "system") applyTheme("system"); } catch { applyTheme("system"); } };
     mq.addEventListener("change", onChange);
@@ -44,8 +51,8 @@ export function ThemeSwitcher() {
     return () => { document.removeEventListener("mousedown", onDoc); document.removeEventListener("keydown", onKey); };
   }, [open]);
 
-  const choose = (p: Pref) => { setPref(p); try { localStorage.setItem(KEY, p); } catch {} applyTheme(p); setOpen(false); };
-  const Current = OPTIONS.find((o) => o.value === pref)!.Icon;
+  const choose = (p: Pref) => { writePref(p); applyTheme(p); setOpen(false); };
+  const Current = mounted ? OPTIONS.find((o) => o.value === pref)!.Icon : Monitor;
 
   return (
     <div ref={root} className="theme">
