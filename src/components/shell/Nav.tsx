@@ -2,11 +2,10 @@
 
 import Link from "next/link";
 import { useEffect, useId, useRef, useState } from "react";
-import { CaretDown } from "@phosphor-icons/react/dist/ssr";
 import { docsUrl } from "@/lib/docs";
 
 // Every nav item leaves this page except Resources, which opens a menu (Figma 1475:5749).
-// The lilac underline shows on hover, focus, and while a menu is open; nothing is "active" by default.
+// Opens on hover (and on click or focus for touch and keyboard). Underline shows on hover, focus, and while open.
 const RESOURCES = [
   { title: "Stellar Lab", sub: "lab.stellar.org", href: "https://lab.stellar.org/" },
   { title: "Skills", sub: "skills.stellar.org", href: "https://skills.stellar.org/" },
@@ -31,9 +30,9 @@ export function Nav() {
   return (
     <nav aria-label="Primary" className="nav hidden tablet:flex">
       <Link href={docsUrl("/build")} className="nav__link">Build</Link>
-      <div ref={root} className="nav__group">
-        <button type="button" className="nav__link nav__link--btn" aria-haspopup="menu" aria-expanded={open} aria-controls={id} onClick={() => setOpen((v) => !v)}>
-          Resources <CaretDown size={12} weight="bold" aria-hidden />
+      <div ref={root} className="nav__group" onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>
+        <button type="button" className="nav__link nav__link--btn" aria-haspopup="menu" aria-expanded={open} aria-controls={id} onClick={() => setOpen((v) => !v)} onFocus={() => setOpen(true)}>
+          Resources
         </button>
         {open ? (
           <div id={id} role="menu" className="menu">
