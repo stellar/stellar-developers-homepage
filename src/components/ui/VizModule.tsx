@@ -9,7 +9,7 @@ export function VizModule({ children }: { children: ReactNode }) {
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    const ro = new ResizeObserver(([e]) => setScale(Math.min(1, e.contentRect.width / 593)));
+    const ro = new ResizeObserver(([e]) => setScale(Math.min(672 / 593, e.contentRect.width / 593)));
     ro.observe(el);
     return () => ro.disconnect();
   }, []);

@@ -28,7 +28,7 @@ export function Nav() {
   }, [open]);
 
   return (
-    <nav aria-label="Primary" className="nav hidden tablet:flex">
+    <nav aria-label="Primary" className="nav">
       <Link href={docsUrl("/build")} className="nav__link">Build</Link>
       <div ref={root} className="nav__group" onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>
         <button type="button" className="nav__link nav__link--btn" aria-haspopup="menu" aria-expanded={open} aria-controls={id} onClick={() => setOpen((v) => !v)} onFocus={() => setOpen(true)}>

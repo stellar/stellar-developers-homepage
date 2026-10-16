@@ -1,7 +1,7 @@
 /* ---------- 08 Support · 09 Developer Previews · 10 Start building ---------- */
-.support { background: var(--sds-clr-gray-02); padding-block: 48px; }
+.support { background: var(--sds-clr-gray-02); padding-block: 56px; }
 .support__inner { display: flex; flex-direction: column; gap: 48px; }
-.support__cards { display: grid; grid-template-columns: 1fr; gap: 24px; }
+.support__cards { display: grid; grid-template-columns: 1fr; gap: 20px; }
 .card-previews { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; padding: 32px; border-radius: 16px; background: var(--sds-clr-lilac-03); border: 1px solid var(--sds-clr-lilac-06); }
 .card-previews .link-primary { margin-top: 8px; }
 .card-previews .eyebrow--lilac { color: var(--sds-clr-lilac-11); }
@@ -12,12 +12,14 @@
 .card-start .card-start__lead { font-size: 16px; line-height: 28px; color: var(--clr-dev-on-deep); margin: 0; }
 .card-start .ctas { padding-top: 8px; }
 @media (min-width: 768px) {
-  .support { padding-block: 64px; }
-  .support__cards { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .support { padding-block: 72px; }
   .card-previews, .card-start { padding: 48px; }
 }
 @media (min-width: 1080px) {
   .support { padding-block: 96px; }
   .support__inner { gap: 96px; }
+  .support__cards { grid-template-columns: 1fr 1fr; gap: 32px; }
   .card-start__h2 { font-size: 40px; line-height: 46px; }
 }
+
+@media (max-width: 767px) { .card-start .ctas .Button { width: 100%; justify-content: center; } }

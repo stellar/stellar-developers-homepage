@@ -3,6 +3,7 @@ import { StellarLogo } from "@/components/ui/StellarLogo";
 import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 import { ThemeSwitcher } from "@/components/shell/ThemeSwitcher";
 import { Nav } from "@/components/shell/Nav";
+import { MobileMenu } from "@/components/shell/MobileMenu";
 import { docsUrl } from "@/lib/docs";
 
 // Header decision (13 Oct): one primary action, Developer Docs → /docs. No search, no theme toggle, no GitHub.
@@ -18,11 +19,12 @@ export function Header() {
         <div className="flex-1" />
         {/* Actions: Developer Docs + 36px toggle to its right (Maz, 16 Oct), 8px gap */}
         <div className="flex items-center gap-2">
-          <Link href={docsUrl("")} className="inline-flex items-center gap-1 h-9 px-3 rounded-lg text-[14px] leading-5 font-semibold"
+          <Link href={docsUrl("")} className="inline-flex items-center gap-1 h-9 px-3 rounded-lg text-[14px] leading-5 font-semibold whitespace-nowrap"
                 style={{ background: "var(--sds-clr-lilac-09)", color: "#fff" }}>
             Developer Docs <ArrowRight size={16} weight="bold" aria-hidden />
           </Link>
           <ThemeSwitcher />
+          <MobileMenu />
         </div>
       </div>
     </header>

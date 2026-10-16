@@ -1,5 +1,5 @@
 /* ---------- 06 · Ramps ---------- */
-.ramps { background: var(--sds-clr-gray-02); padding-block: 48px; }
+.ramps { background: var(--sds-clr-gray-02); padding-block: 56px; }
 .ramps__inner { display: flex; flex-direction: column; gap: 40px; }
 .ramps__head { display: flex; flex-direction: column; gap: 24px; }
 .ramps__title { display: flex; flex-direction: column; gap: 24px; max-width: 640px; }
@@ -21,7 +21,7 @@
 .ramp-card__title { font-weight: 500; font-size: 18px; line-height: 26px; color: var(--sds-clr-gray-12); margin: 0; }
 .ramp-card__body { font-size: 15px; line-height: 24px; color: var(--sds-clr-gray-11); margin: 0; }
 @media (min-width: 768px) {
-  .ramps { padding-block: 64px; }
+  .ramps { padding-block: 72px; }
   .ramp-row--3 { grid-template-columns: repeat(3, 1fr); }
   .ramp-row--2 { grid-template-columns: repeat(2, 1fr); }
 }
@@ -43,7 +43,7 @@
 .carousel__dots { display: flex; align-items: center; gap: 6px; }
 .carousel__dot { width: 6px; height: 6px; border-radius: 999px; background: var(--sds-clr-gray-06); border: 0; padding: 0; cursor: pointer; }
 .carousel__dot[aria-current="true"] { width: 16px; background: var(--sds-clr-lilac-09); }
-@media (max-width: 767px) { .carousel__item { flex-basis: 85%; } }
+@media (max-width: 767px) { .carousel__item { flex-basis: 100%; } .ramps .ctas .Button { width: 100%; justify-content: center; } }
 @media (min-width: 768px) and (max-width: 1079px) { .carousel__item { flex-basis: calc((100% - 16px) / 2); } }
 
 .ramp-card--static:hover { border-color: var(--sds-clr-gray-06); }
