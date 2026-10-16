@@ -40,7 +40,7 @@
 /* SDS adds prose margins (p/ul/ol:not(:last-child) 1.5rem, specificity 0,2,1). This is a composed page: reset them. */
 html.sds-theme-light p:not(:last-child), html.sds-theme-dark p:not(:last-child), html.sds-theme-light ul:not(:last-child), html.sds-theme-dark ul:not(:last-child), html.sds-theme-light ol:not(:last-child), html.sds-theme-dark ol:not(:last-child),
 .sds-theme-light p, .sds-theme-dark p, .sds-theme-light h1, .sds-theme-dark h1, .sds-theme-light h2, .sds-theme-dark h2, .sds-theme-light h3, .sds-theme-dark h3 { margin: 0; }
-html { font-family: var(--font-sans); background: var(--sds-clr-gray-01); color: var(--sds-clr-gray-12); }
+html { scroll-padding-top: 64px; scroll-behavior: smooth; font-family: var(--font-sans); background: var(--sds-clr-gray-01); color: var(--sds-clr-gray-12); }
 body { background: var(--sds-clr-gray-01); }
 code, pre, .font-mono { font-family: var(--font-mono); }
 
