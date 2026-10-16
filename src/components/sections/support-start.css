@@ -22,4 +22,3 @@
   .card-start__h2 { font-size: 40px; line-height: 46px; }
 }
 
-@media (max-width: 767px) { .card-start .ctas .Button { width: 100%; justify-content: center; } }
