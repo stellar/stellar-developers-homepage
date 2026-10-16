@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Icon } from "@stellar/design-system";
-import { PatternDots } from "@/components/visuals/PatternDots";
+import { ScatteredDots } from "@/components/visuals/ScatteredDots";
 import { Tag } from "@/components/ui/Tag";
 
 // 02 · Pillar cards — V6 Figma 1679:5067, Layer tile component 1482:5157.
@@ -20,8 +20,9 @@ export function PillarCards() {
           {TILES.map((t) => (
             <li key={t.n} className="tile">
               <div className="tile__media" aria-hidden>
-                <PatternDots className="tile__pattern" />
-                <div className="tile__icon"><t.Icon width={36} height={36} /></div>
+                <ScatteredDots className="tile__pattern" />
+                <span className="tile__clear" />
+                <div className="tile__icon"><t.Icon width={56} height={56} /></div>
               </div>
               <div className="tile__body">
                 <span className="tile__num">{t.n}</span>
