@@ -4,8 +4,8 @@ import "./ecosystem-loop.css";
 
 /**
  * Flow viz · Ecosystem loop (Centre = Your app). Figma 1530:4092, corrections 15 Oct (note 07):
- * the ring is cut 6 px from each glass card, a travelling dot runs on the hidden full circle,
- * and dots render above the line and the cards. Connectors draw in sequence; static under
+ * the ring is cut 6 px from each glass card and the three flow dots render above the line and the
+ * cards. No orbiting dot. Connectors draw in sequence; static under
  * prefers-reduced-motion. Geometry is the design's 593 × 480 frame; the parent scales it.
  */
 const CX = 296.5, CY = 240, R = 172, GAP = 6;
@@ -55,11 +55,10 @@ export function EcosystemLoop() {
         <Icon.CodeBrowser width={24} height={24} />
         <span>Your app</span>
       </div>
-      {/* Dots layer sits above the cards. The traveller follows the hidden full circle. */}
+      {/* Dots layer sits above the cards. No travelling dot (Maz, 16 Oct). */}
       <svg className="loop__dots" viewBox="0 0 593 480" aria-hidden focusable="false">
         {DOTS.map((p, i) => <circle key={i} cx={p.x} cy={p.y} r={5} className="loop__dot" style={{ animationDelay: `${0.3 + i * 0.6}s` }} />)}
       </svg>
-      <span className="loop__traveller" aria-hidden />
       <p className="sr-only">Assets, markets and liquidity form a loop around your app: assets are deposited as collateral in markets, markets are priced and exited through liquidity venues, and liquidity makes assets convertible and usable.</p>
     </div>
   );
