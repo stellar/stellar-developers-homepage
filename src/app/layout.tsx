@@ -15,6 +15,9 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://developers.stellar.org"),
 };
 
+// GA4 property "developers.Stellar.org" (same as the docs and the USDT0 page). Set NEXT_PUBLIC_GA_ID="" to disable.
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID ?? "G-ZCT4GYX8KN";
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" data-theme="light" suppressHydrationWarning className={`sds-theme-light ${inter.variable} ${inconsolata.variable} h-full antialiased`}>
@@ -28,6 +31,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header />
         <main id="main" className="flex-1">{children}</main>
         <Footer />
+        {GA_ID ? (
+          <>
+            <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="afterInteractive" />
+            <Script id="ga4" strategy="afterInteractive">{`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GA_ID}',{anonymize_ip:true});`}</Script>
+          </>
+        ) : null}
       </body>
     </html>
   );
