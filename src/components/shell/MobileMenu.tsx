@@ -2,7 +2,9 @@
 
 import { useEffect, useId, useState } from "react";
 import { List, X } from "@phosphor-icons/react/dist/ssr";
+import { Logo } from "@stellar/design-system";
 import { docsUrl } from "@/lib/docs";
+import { ThemeSwitcher } from "@/components/shell/ThemeSwitcher";
 
 // Menu button (36px) and nav sheet for tablet and mobile (V7 frames 1884:11167 / 1884:11463).
 const LINKS = [
@@ -44,6 +46,14 @@ export function MobileMenu() {
             </div>
             {LINKS.slice(1).map((l) => <a key={l.label} href={l.href} className="sheet__link" onClick={() => setOpen(false)}>{l.label}</a>)}
           </nav>
+          {/* Mobile only: appearance + socials live in the sheet (Maz, 16 Oct) */}
+          <div className="sheet__foot">
+            <div className="sheet__socials">
+              <a href="https://x.com/BuildOnStellar" className="sheet__icon" aria-label="Stellar developers on X" target="_blank" rel="noreferrer"><Logo.XTwitter width={20} height={20} /></a>
+              <a href="https://discord.gg/Q2xfSRAhS" className="sheet__icon" aria-label="Stellar developer Discord" target="_blank" rel="noreferrer"><Logo.Discord width={20} height={20} /></a>
+            </div>
+            <ThemeSwitcher />
+          </div>
         </div>
       ) : null}
     </>
