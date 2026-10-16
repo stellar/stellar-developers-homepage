@@ -1,8 +1,7 @@
 "use client";
 
 import { useEffect, useId, useState } from "react";
-import { List, X } from "@phosphor-icons/react/dist/ssr";
-import { Logo } from "@stellar/design-system";
+import { List, X, XLogo, DiscordLogo } from "@phosphor-icons/react/dist/ssr";
 import { docsUrl } from "@/lib/docs";
 import { ThemeSwitcher } from "@/components/shell/ThemeSwitcher";
 
@@ -48,11 +47,9 @@ export function MobileMenu() {
           </nav>
           {/* Mobile only: appearance + socials live in the sheet (Maz, 16 Oct) */}
           <div className="sheet__foot">
-            <div className="sheet__socials">
-              <a href="https://x.com/BuildOnStellar" className="sheet__icon" aria-label="Stellar developers on X" target="_blank" rel="noreferrer"><Logo.XTwitter width={20} height={20} /></a>
-              <a href="https://discord.gg/Q2xfSRAhS" className="sheet__icon" aria-label="Stellar developer Discord" target="_blank" rel="noreferrer"><Logo.Discord width={20} height={20} /></a>
-            </div>
             <ThemeSwitcher />
+            <a href="https://x.com/BuildOnStellar" className="sheet__icon" aria-label="Stellar developers on X" target="_blank" rel="noreferrer"><XLogo size={16} aria-hidden /></a>
+            <a href="https://discord.gg/Q2xfSRAhS" className="sheet__icon" aria-label="Stellar developer Discord" target="_blank" rel="noreferrer"><DiscordLogo size={16} aria-hidden /></a>
           </div>
         </div>
       ) : null}

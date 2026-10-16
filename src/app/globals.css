@@ -228,10 +228,9 @@ code, pre, .font-mono { font-family: var(--font-mono); }
 .sheet__group .sheet__label { border-bottom: 0; padding-bottom: 6px; }
 .sheet__sub { display: block; padding: 8px 0 8px 16px; font-size: 15px; line-height: 24px; color: var(--sds-clr-gray-11); text-decoration: none; }
 .sheet__sub:hover, .sheet__link:hover { color: var(--sds-clr-lilac-11); }
-.sheet__foot { display: flex; align-items: center; justify-content: space-between; padding: 8px var(--page-gutter) 24px; }
-.sheet__socials { display: flex; gap: 8px; }
+.sheet__foot { display: flex; align-items: center; gap: 8px; padding: 8px var(--page-gutter) 24px; }
 .sheet__icon { width: 36px; height: 36px; display: inline-flex; align-items: center; justify-content: center; border-radius: 8px; color: var(--sds-clr-gray-12); }
 .sheet__icon:hover { background: var(--sds-clr-gray-03); }
-.sheet__icon svg { fill: currentColor; }
+
 /* On mobile the header keeps only the CTA and the menu button; appearance moves into the sheet */
-@media (max-width: 767px) { header .theme { display: none; } .sheet .theme { display: block; } .sheet .theme__menu { right: 0; left: auto; bottom: calc(100% + 8px); top: auto; } }
+@media (max-width: 767px) { header .theme { display: none; } .sheet .theme { display: block; } .sheet .theme__menu { left: 0; right: auto; bottom: calc(100% + 8px); top: auto; } }
