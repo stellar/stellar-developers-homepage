@@ -74,12 +74,11 @@ code, pre, .font-mono { font-family: var(--font-mono); }
 @media (min-width: 768px) {
   .hero__h1 { font-size: 48px; line-height: 54px; }
   .hero__inner { padding-block: 56px 64px; }
-  .hero__canvas { display: block; } /* hidden on mobile per the V7 390 frame */
 }
 @media (min-width: 1080px) {
   .hero__inner { flex-direction: row; align-items: center; gap: 64px; padding-block: 80px 72px; }
   .hero__h1 { font-size: 56px; line-height: 62px; }
-  .hero__canvas { flex: 1 0 0; align-self: auto; }
+  .hero__canvas { display: block; flex: 1 0 0; align-self: auto; } /* hidden below desktop per the V7 768 and 390 frames */
 }
 
 /* ---------- shared bits ---------- */
@@ -103,8 +102,8 @@ code, pre, .font-mono { font-family: var(--font-mono); }
 .tile__explore { position: relative; margin-top: auto; display: inline-flex; align-items: center; gap: 6px; font-weight: 500; font-size: 14px; line-height: 20px; color: var(--sds-clr-gray-11); text-decoration: none; }
 .tile__explore svg { stroke: var(--sds-clr-lilac-09); }
 .tile__explore:hover { color: var(--sds-clr-gray-12); text-decoration: underline; text-underline-offset: 4px; }
-@media (min-width: 768px) { .pillars { padding-block: 64px; } .pillars__grid { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 1080px) { .pillars__grid { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 768px) { .pillars { padding-block: 64px; } .pillars__grid { grid-template-columns: repeat(2, 1fr); } .pillars__grid > li:nth-child(3):last-child { grid-column: 1 / -1; width: calc(50% - 12px); justify-self: center; } }
+@media (min-width: 1080px) { .pillars__grid { grid-template-columns: repeat(3, 1fr); } .pillars__grid > li:nth-child(3):last-child { grid-column: auto; width: auto; justify-self: stretch; } }
 
 /* ---------- Pillar module (shared by 03 Network, 04 Primitives, 05 Tooling, 07 Ecosystem, 08 Support) ---------- */
 .pillar-section { background: var(--sds-clr-gray-01); padding-block: 56px; }
@@ -124,7 +123,7 @@ code, pre, .font-mono { font-family: var(--font-mono); }
 .link-primary { display: inline-flex; align-items: center; gap: 2px; font-weight: 500; font-size: 14px; line-height: 20px; color: var(--sds-clr-lilac-11); text-decoration: none; }
 .link-primary svg { stroke: currentColor; }
 .link-primary:hover { text-decoration: underline; text-underline-offset: 4px; }
-@media (min-width: 768px) { .pillar-section { padding-block: 72px; } .h2 { font-size: 36px; line-height: 42px; } }
+@media (min-width: 768px) { .pillar-section { padding-block: 72px; } .h2 { font-size: 34px; line-height: 46px; } }
 @media (min-width: 1080px) {
   .pillar-section { padding-block: 96px; }
   .pillar { flex-direction: row; align-items: center; gap: 64px; }
