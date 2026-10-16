@@ -4,7 +4,7 @@
 .support__cards { display: grid; grid-template-columns: 1fr; gap: 24px; }
 .card-previews { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; padding: 32px; border-radius: 16px; background: var(--sds-clr-lilac-03); border: 1px solid var(--sds-clr-lilac-06); }
 .card-previews .link-primary { margin-top: 8px; }
-.eyebrow--lilac { color: var(--sds-clr-lilac-11); }
+.card-previews .eyebrow--lilac { color: var(--sds-clr-lilac-11); }
 .card-previews__h2 { font-weight: 400; font-size: 28px; line-height: 36px; letter-spacing: -0.01em; color: var(--sds-clr-gray-12); margin: 0; }
 /* Reversed card: fixed deep lilac + light text in both themes (lilac-12 flips to light in Dark). */
 .card-start { display: flex; flex-direction: column; align-items: flex-start; gap: 20px; padding: 32px; border-radius: 16px; background: var(--clr-dev-surface-deep); }
