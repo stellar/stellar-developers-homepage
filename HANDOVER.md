@@ -63,7 +63,7 @@ Both existing SDF sites use Google Tag Manager with GA4 behind it. The docs (and
 
 - v1 of this site loads the GA4 tag directly with that measurement ID, so home page and docs land in one property.
 - Later: a new GTM container for the home page, so Comms can manage marketing tags without touching the repo. Needs GTM access (Catherine).
-- Mintlify side: add `GTM-M2JLH37` under `integrations.gtm.tagId` in `docs.json` so /docs keeps reporting after migration.
+- Mintlify side: add `GTM-M2JLH37` under `integrations.gtm.tagId` in `docs.json` so /docs keeps reporting after migration. Do not create a new GA4 property or a new GTM container for /docs: the docs keep their existing container, the home page shares the same GA4 property, and only the home page gets its own container later.
 
 ## The /docs proxy and cutover (Steph + ops)
 
