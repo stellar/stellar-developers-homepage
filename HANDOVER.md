@@ -83,6 +83,10 @@ Both existing SDF sites use Google Tag Manager with GA4 behind it. The docs (and
 - Code tabs in Primitives and Tooling: commands verified 8 Oct 2026 against stellar-cli v28, npm, skills.stellar.org, raven.stellar.org and the x402 docs.
 - Partner carousel: six partners with one-line descriptions taken from each partner's site (MoneyGram's from the Stellar docs). Logos exported from Figma.
 
+## Tracking
+
+Open work is tracked on the GitHub project board [Developer front door · developers.stellar.org](https://github.com/orgs/stellar/projects/106), linked to this repo. New issues on the repo land there automatically. Labels: design, infra, analytics, copy, a11y, bug, needs-info.
+
 ## Open items
 
 - Netlify site connected to this repo (SDF Netlify team).
