@@ -42,7 +42,7 @@ export function LedgerPanel() {
         </tbody>
       </table>
       <div className="panel__foot">
-        <span className="panel__live"><span className="dot dot--green" aria-hidden />Sample data · illustrative</span>
+        <span className="panel__live"><span className="dot dot--green" aria-hidden />Sample data</span>
         <span className="font-mono">stellar-rpc</span>
       </div>
     </div>
