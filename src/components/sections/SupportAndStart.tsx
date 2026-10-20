@@ -17,14 +17,14 @@ export function SupportAndStart() {
             <p className="eyebrow">Support</p>
             <h2 className="h2">Support that scales with you</h2>
             <p className="pillar__note">Explore the Stellar Community Fund, Marketing Grants, and other funding opportunities for projects building on Stellar.</p>
-            <div className="ctas">
-              <ButtonLink href="https://stellar.org/grants-and-funding" variant="primary" size="md" icon={<Icon.ArrowRight width={14} height={14} aria-hidden />}>See Programs</ButtonLink>
-            </div>
             <ul className="features nav-list">
               <FeatureItem icon={<Icon.Code02 width={16} height={16} />} title="Build">Funding to bring your project to life.</FeatureItem>
               <FeatureItem icon={<Icon.LineChartUp01 width={16} height={16} />} title="Grow">Support to drive adoption and reach.</FeatureItem>
               <FeatureItem icon={<Icon.Dataflow03 width={16} height={16} />} title="Scale">Potential investment to accelerate growth.</FeatureItem>
             </ul>
+            <div className="ctas">
+              <ButtonLink href="https://stellar.org/grants-and-funding" variant="primary" size="lg" icon={<Icon.ArrowRight width={14} height={14} aria-hidden />}>See Programs</ButtonLink>
+            </div>
           </div>
           <div className="pillar__media">
             <VizModule><BuildGrowScale /></VizModule>
