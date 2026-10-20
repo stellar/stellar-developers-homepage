@@ -7,11 +7,11 @@ import { docsUrl } from "@/lib/docs";
 // Every nav item leaves this page except Resources, which opens a menu (Figma 1475:5749).
 // Opens on hover (and on click or focus for touch and keyboard). Underline shows on hover, focus, and while open.
 const RESOURCES = [
-  { title: "Stellar Lab", sub: "lab.stellar.org", href: "https://lab.stellar.org/" },
-  { title: "Skills", sub: "skills.stellar.org", href: "https://skills.stellar.org/" },
-  { title: "Block Explorers", sub: "Docs", href: docsUrl("/tools/developer-tools/block-explorers") },
-  { title: "Build with AI", sub: "Docs", href: docsUrl("/build/building-with-ai") },
-  { title: "Regional starter pack", sub: "regionalstarterpack.com", href: "https://www.regionalstarterpack.com/" },
+  { title: "Stellar Lab", href: "https://lab.stellar.org/" },
+  { title: "Skills", href: "https://skills.stellar.org/" },
+  { title: "Block Explorers", href: docsUrl("/tools/developer-tools/block-explorers") },
+  { title: "Build with AI", href: docsUrl("/build/building-with-ai") },
+  { title: "Regional starter pack", href: "https://www.regionalstarterpack.com/" },
 ];
 
 export function Nav() {
@@ -39,7 +39,6 @@ export function Nav() {
             {RESOURCES.map((r) => (
               <a key={r.title} role="menuitem" href={r.href} className="menu__item" target={r.href.startsWith("http") ? "_blank" : undefined} rel="noreferrer" onClick={() => setOpen(false)}>
                 <span className="menu__title">{r.title}</span>
-                <span className="menu__sub">{r.sub}</span>
               </a>
             ))}
           </div>
