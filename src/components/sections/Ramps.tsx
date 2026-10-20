@@ -37,7 +37,7 @@ export function Ramps() {
                 </div>
                 <div className="ramp-card__copy">
                   <h3 className="ramp-card__title">Build less, deploy around the world</h3>
-                  <p className="ramp-card__body">Providers handle local compliance and KYC, so you can expand without rebuilding.</p>
+                  <p className="ramp-card__body">Integrate with local ramp providers to reach users in new markets without building from scratch.</p>
                 </div>
               </div>
             </li>

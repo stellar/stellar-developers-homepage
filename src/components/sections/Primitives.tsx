@@ -16,16 +16,16 @@ export function Primitives() {
           <p className="pillar__note">Get started faster with primitives that are built into the protocol. Extend them with smart contracts.</p>
           <ul className="features nav-list">
             <FeatureItem icon={<Icon.CoinsStacked01 width={16} height={16} />} title="Tokens" link={{ label: "Tokens docs", href: docsUrl("/tokens") }}>
-              Stellar Classic assets with issuer controls, built in. Stablecoins, RWAs, vaults and custom tokens from audited implementations.
+              Stellar Classic assets with native issuer controls. Audited implementations for stablecoins, RWAs, vaults and custom tokens.
             </FeatureItem>
             <FeatureItem icon={<Icon.Key01 width={16} height={16} />} title="Accounts and auth" link={{ label: "Contract accounts", href: docsUrl("/build/guides/contract-accounts") }}>
-              Multisig, built in. Passkeys, smart wallets, session keys, delegated authorization and spending limits as smart contracts.
+              Native multisig, plus smart contracts for passkeys, smart wallets, session keys, delegated authorization and spending limits.
             </FeatureItem>
             <FeatureItem icon={<Icon.SwitchHorizontal01 width={16} height={16} />} title="Transactions" link={{ label: "Transactions docs", href: docsUrl("/build/guides/transactions") }}>
-              Payments that convert to another asset on the way, fee sponsorship and sponsored reserves, built in. Contract calls on top.
+              Path payments convert assets along the way. Fee sponsorship and sponsored reserves are native capabilities, with smart contract calls for additional logic.
             </FeatureItem>
             <FeatureItem icon={<Icon.Lock01 width={16} height={16} />} title="Privacy" link={{ label: "Privacy docs", href: docsUrl("/build/apps/privacy") }}>
-              Native cryptography, built in. Implementations for Confidential Tokens and Private Payments.
+              Protocol-level cryptographic primitives, plus developer previews for Confidential Tokens and Stellar Private Payments.
             </FeatureItem>
           </ul>
         </div>
