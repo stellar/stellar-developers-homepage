@@ -17,7 +17,7 @@ stellar.org → developers.stellar.org (this repo, Netlify) → developers.stell
 - `@stellar/design-system` v4 for Badge, CopyText, icons, logo and Button styling
 - `@phosphor-icons/react` for the few icons SDS does not ship (theme switcher, menu, socials)
 - `@paper-design/shaders-react` for the grain-gradient module backgrounds
-- Netlify: build `npm run build`, publish `out/`, deploy preview per PR, deploy on merge to `main`
+- Netlify: build `npm run build`, publish `out/`, deploy preview per PR, deploy on merge to `main`. Live at https://stellar-developers-homepage.netlify.app/ (connected 20 Oct 2026)
 
 ## Run it
 
@@ -89,7 +89,6 @@ Open work is tracked on the GitHub project board [Developer front door · develo
 
 ## Open items
 
-- Netlify site connected to this repo (SDF Netlify team).
 - GTM access for Maz (Catherine).
 - /docs subpath, docs.json GTM ID, DNS cutover (Steph, ops).
 - Copy pass with Kate: partner one-liners, Network lead, Ramps tile tagline, 99.998% uptime stat, hero CTA label.
