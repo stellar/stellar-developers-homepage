@@ -41,6 +41,7 @@
 html.sds-theme-light p:not(:last-child), html.sds-theme-dark p:not(:last-child), html.sds-theme-light ul:not(:last-child), html.sds-theme-dark ul:not(:last-child), html.sds-theme-light ol:not(:last-child), html.sds-theme-dark ol:not(:last-child),
 .sds-theme-light p, .sds-theme-dark p, .sds-theme-light h1, .sds-theme-dark h1, .sds-theme-light h2, .sds-theme-dark h2, .sds-theme-light h3, .sds-theme-dark h3 { margin: 0; }
 html { scroll-padding-top: 64px; scroll-behavior: smooth; font-family: var(--font-sans); background: var(--sds-clr-gray-01); color: var(--sds-clr-gray-12); }
+html, body { overflow-x: clip; } /* the page must never scroll sideways on phones */
 body { background: var(--sds-clr-gray-01); }
 code, pre, .font-mono { font-family: var(--font-mono); }
 
@@ -137,7 +138,7 @@ a:focus-visible, button:focus-visible, [role="tab"]:focus-visible, [tabindex]:fo
 }
 
 /* ---------- Media module: 593 × 480 background + 528 × 372 code slot (504 × 324 content) ---------- */
-.media { position: relative; width: 100%; max-width: 672px; aspect-ratio: 593 / 480; margin-inline: auto; }
+.media { position: relative; width: 100%; max-width: 672px; aspect-ratio: 593 / 480; margin-inline: auto; overflow: hidden; border-radius: 12px; } /* clip the 593px frame: transform scale does not shrink the layout box, which let phones scroll sideways */
 .media__frame { position: absolute; left: 0; top: 0; width: 593px; height: 480px; transform-origin: top left; border-radius: 12px; overflow: hidden; }
 .media__bg { position: absolute; inset: 0; }
 .media__code { position: absolute; left: 32px; top: 54px; width: 528px; height: 372px; border-radius: 12px; background: var(--sds-clr-gray-01); border: 1px solid var(--sds-clr-gray-06); display: flex; align-items: center; justify-content: center; }
