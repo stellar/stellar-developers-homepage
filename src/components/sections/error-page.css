@@ -1,0 +1,18 @@
+/* Error pages (404 / 403 / 500). Body paddings from the Figma full-page frames:
+   390 → 72/96, 768 → 120/160, 1440 → 160/200. Content column 640, full width below 768. */
+.error-page { background: var(--sds-clr-gray-01); flex: 1 0 auto; }
+.error-page .error-page__inner { display: flex; flex-direction: column; align-items: flex-start; gap: 20px; padding-block: 72px 96px; }
+.error-page .error-page__inner > * { max-width: 640px; }
+.error-page .error-page__code { font-family: var(--font-mono); font-weight: 400; font-size: 56px; line-height: 1.1; color: var(--sds-clr-gray-12); margin: 0; }
+.error-page .error-page__title { font-weight: 400; font-size: 32px; line-height: 1.1; letter-spacing: -0.02em; color: var(--sds-clr-gray-12); margin: 0; }
+.error-page .error-page__body { font-size: 18px; line-height: 1.5; color: var(--sds-clr-gray-11); margin: 0; }
+.error-page .error-page__actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.error-page .error-page__ref { font-family: var(--font-mono); font-size: 13px; line-height: 1.5; color: var(--sds-clr-gray-11); margin: 0; }
+@media (min-width: 768px) {
+  .error-page .error-page__inner { padding-block: 120px 160px; }
+  .error-page .error-page__code { font-size: 64px; }
+  .error-page .error-page__title { font-size: 40px; }
+}
+@media (min-width: 1080px) {
+  .error-page .error-page__inner { padding-block: 160px 200px; }
+}
