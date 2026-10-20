@@ -33,7 +33,7 @@ export function LedgerPanel() {
             <tr key={r.seq}>
               <td>{r.seq}</td>
               <td className="ledger__hash">
-                <span className="ledger__copy"><span>{r.hash}</span><CopyButton text={r.hash} label={`Copy hash ${r.hash}`} className="copy-btn" /></span>
+                <span className="ledger__copy"><span>{r.hash}</span><CopyButton text={r.hash} label={`Copy hash ${r.hash}`} className="copy-btn" selectPrevious /></span>
               </td>
               <td className="num">{r.txs}</td>
               <td className="num">{r.closed}</td>

@@ -166,6 +166,8 @@ a:focus-visible, button:focus-visible, [role="tab"]:focus-visible, [tabindex]:fo
 .copy-btn { display: inline-flex; vertical-align: middle; padding: 0; border: 0; background: none; color: var(--sds-clr-gray-11); cursor: pointer; }
 .copy-btn svg { stroke: currentColor; }
 .copy-btn:hover { color: var(--sds-clr-gray-12); }
+.copy-btn.is-failed, .code-tabs__copy.is-failed { color: var(--sds-clr-red-11); }
+.code-tabs__copy.is-failed { border-color: var(--sds-clr-red-06); }
 /* SDS table/list resets inside panels */
 .panel table.Table th, .panel table.Table td { padding: 8px 16px; }
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { useId, useState } from "react";
+import { useId, useRef, useState } from "react";
 import { CopyButton } from "@/components/ui/CopyButton";
 
 export type CodeTab = { id: string; label: string; lines: string[]; copy?: string };
@@ -12,6 +12,7 @@ export type CodeTab = { id: string; label: string; lines: string[]; copy?: strin
 export function CodeTabs({ tabs, defaultTab, showCopy = false, label }: { tabs: CodeTab[]; defaultTab?: string; showCopy?: boolean; label: string }) {
   const [active, setActive] = useState(defaultTab ?? tabs[0].id);
   const base = useId();
+  const preRef = useRef<HTMLPreElement>(null);
   const tab = tabs.find((t) => t.id === active) ?? tabs[0];
   const copyText = tab.copy ?? tab.lines.filter((l) => l.startsWith("$ ")).map((l) => l.slice(2)).join("\n");
 
@@ -36,10 +37,10 @@ export function CodeTabs({ tabs, defaultTab, showCopy = false, label }: { tabs: 
           ))}
         </div>
         {showCopy ? (
-          <CopyButton text={copyText} label="Copy commands" className="code-tabs__copy">Copy</CopyButton>
+          <CopyButton text={copyText} label="Copy commands" className="code-tabs__copy" selectRef={preRef}>Copy</CopyButton>
         ) : null}
       </div>
-      <pre role="tabpanel" id={`${base}-${tab.id}-panel`} aria-labelledby={`${base}-${tab.id}`} className="code-tabs__body">
+      <pre ref={preRef} role="tabpanel" id={`${base}-${tab.id}-panel`} aria-labelledby={`${base}-${tab.id}`} className="code-tabs__body">
         {tab.lines.map((l, i) => (
           <span key={i} className={l.startsWith("#") || l.startsWith("✓") ? "code-tabs__comment" : undefined}>{l}{"\n"}</span>
         ))}
