@@ -44,6 +44,7 @@ Node 22 or newer.
 | `src/lib/docs.ts` | `docsUrl()` helper, see Links below |
 | `public/partners/*.png` | Partner logos exported from Figma |
 | `netlify.toml` | Build settings, `/docs` rewrite, production env |
+| `src/app/not-found.tsx`, `src/app/error.tsx` | Branded 404 (exported to `out/404.html`) and the 500 runtime error boundary; both render `components/sections/ErrorPage` |
 
 ## Theming
 
