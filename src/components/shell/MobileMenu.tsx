@@ -33,7 +33,7 @@ export function MobileMenu() {
   return (
     <>
       <button type="button" className="menu-btn" aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} aria-controls={id} onClick={() => setOpen((v) => !v)}>
-        {open ? <X size={18} aria-hidden /> : <List size={18} aria-hidden />}
+        {open ? <X size={20} aria-hidden /> : <List size={20} aria-hidden />}
       </button>
       {open ? (
         <div id={id} className="sheet" role="dialog" aria-label="Site navigation">
@@ -48,8 +48,8 @@ export function MobileMenu() {
           {/* Mobile only: appearance + socials live in the sheet (Maz, 16 Oct) */}
           <div className="sheet__foot">
             <ThemeSwitcher />
-            <a href="https://x.com/BuildOnStellar" className="sheet__icon" aria-label="Stellar developers on X" target="_blank" rel="noreferrer"><XLogo size={16} aria-hidden /></a>
-            <a href="https://discord.gg/Q2xfSRAhS" className="sheet__icon" aria-label="Stellar developer Discord" target="_blank" rel="noreferrer"><DiscordLogo size={16} aria-hidden /></a>
+            <a href="https://x.com/BuildOnStellar" className="sheet__icon" aria-label="Stellar developers on X" target="_blank" rel="noreferrer"><XLogo size={20} aria-hidden /></a>
+            <a href="https://discord.gg/Q2xfSRAhS" className="sheet__icon" aria-label="Stellar developer Discord" target="_blank" rel="noreferrer"><DiscordLogo size={20} aria-hidden /></a>
           </div>
         </div>
       ) : null}
