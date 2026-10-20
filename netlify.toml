@@ -8,6 +8,13 @@
 
 # Docs live on Mintlify, served under /docs on this domain (subpath hosting).
 # The target host is set in Mintlify's dashboard once the subpath is configured.
+# Bare /docs first: the wildcard below would proxy "/docs/" and Mintlify answers that with a 308 back to /docs, which loops.
+[[redirects]]
+  from = "/docs"
+  to = "https://sdf-migration-preview.mintlify.app/docs"
+  status = 200
+  force = true
+
 [[redirects]]
   from = "/docs/*"
   to = "https://sdf-migration-preview.mintlify.app/docs/:splat"
