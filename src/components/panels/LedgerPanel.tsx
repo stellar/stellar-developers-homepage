@@ -4,7 +4,7 @@ import { Badge, Icon } from "@stellar/design-system";
 import { CopyButton } from "@/components/ui/CopyButton";
 
 // Ledger panel on static sample data (Maz, 8 Oct): header + recent ledgers + footnote,
-// fitted to the 504 × 324 code slot. No live fetch; a later version may read Stellar RPC.
+// fitted to the 504 × 324 code slot. Stays on sample data by decision (Maz, 20 Oct): no live feed to maintain.
 const ROWS = [
   { seq: "61,284,907", hash: "e055ae…b7b3", txs: 374, closed: "2s ago" },
   { seq: "61,284,906", hash: "35e170…278c", txs: 388, closed: "7s ago" },
@@ -42,7 +42,7 @@ export function LedgerPanel() {
         </tbody>
       </table>
       <div className="panel__foot">
-        <span className="panel__live"><span className="dot dot--green" aria-hidden />Sample data · live from Stellar RPC at launch</span>
+        <span className="panel__live"><span className="dot dot--green" aria-hidden />Sample data · illustrative</span>
         <span className="font-mono">stellar-rpc</span>
       </div>
     </div>
