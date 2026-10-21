@@ -31,7 +31,10 @@ export function Footer() {
             </div>
           ))}
         </div>
-        <div className="footer__bottom">
+      </div>
+      {/* Bottom band mirrors the header: full-width rule, 64px tall, content on the page grid. */}
+      <div className="footer__bottom">
+        <div className="container-page footer__bottom-inner">
           <span className="footer__status"><span className="dot dot--green" aria-hidden />Network status</span>
           <div className="footer__legal">
             <Link href="https://stellar.org/terms-of-service">Terms</Link>
