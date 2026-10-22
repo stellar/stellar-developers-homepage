@@ -66,6 +66,14 @@ Both existing SDF sites use Google Tag Manager with GA4 behind it. The docs (and
 - Later: a new GTM container for the home page, so Comms can manage marketing tags without touching the repo. Needs GTM access (Catherine).
 - Mintlify side: add `GTM-M2JLH37` under `integrations.gtm.tagId` in `docs.json` so /docs keeps reporting after migration. Do not create a new GA4 property or a new GTM container for /docs: the docs keep their existing container, the home page shares the same GA4 property, and only the home page gets its own container later.
 
+## Docs search (Mintlify assistant)
+
+The search bar in the header (`src/components/shell/DocsSearch.tsx`) opens the Mintlify AI assistant, widget ID `mint_widget_2b3d5573-7f2d-44eb-947e-6eced343e2c1`. Visitors type a question and press Enter, and the answer opens in a side panel (a full-screen sheet on phones). It returns AI answers with links to docs pages, not a list of search results. Under 768px the bar becomes a search icon that opens a full-width input under the header. ⌘K (Ctrl+K on Windows) focuses it from anywhere.
+
+`src/lib/assistant.ts` loads the widget only on first hover, focus or tap of the bar, because the runtime is about 1.2MB. It is pinned to runtime `0.0.75` (`VERSION`) through `widget.mintlify.com/versions/0.0.75/embed.js`, which is not Mintlify's documented entry point (`/v1/embed.js`). If that URL ever disappears, the bar falls back to the docs link. Mintlify has no setting to hide its floating "Ask assistant" button, and the widget overrides any CSS on its own element. So `assistant.ts` moves the widget's `<mintlify-assistant>` element into `#assistant-root` and hides that wrapper whenever the element's `data-state` is `closed`. Re-test that the button stays hidden before bumping `VERSION`. If the widget fails to load (blocked, or slower than 15s), Enter sends visitors to the docs instead, and the next search retries. If the origin is not allowed or the widget is disabled, the panel opens and the first question gets an error from Mintlify, so the bar closes it and sends visitors to the docs.
+
+Origins must be allowed in Mintlify's widget settings: `http://localhost:3100`, `https://stellar-developers-homepage.netlify.app`, `https://developers.stellar.org`. Deploy previews fall back to the docs link unless their origin is allowed too (unverified on a real preview, so check it on the first PR). On localhost, hCaptcha (Mintlify's bot protection) logs a "localhost detected" warning, which shows as the Next.js "1 Issue" badge in dev, and may show a puzzle before answering. Neither happens on a real domain. GA4 gets `docs_search_submit` and `assistant_open`/`assistant_close`/`assistant_ask` events with a `source`. Question text is never sent to GA. Mintlify receives the question by design. Its own telemetry is limited to metadata, with page paths turned off (`analytics.capturePathname: false`). There is no Content Security Policy on the site yet. If one is added, it needs the sources in Mintlify's widget docs (`widget.mintlify.com`, `api.mintlify.com`, `ph.mintlify.com`, hCaptcha).
+
 ## The /docs proxy and cutover (Steph + ops)
 
 1. Confirm SDF's Mintlify plan supports hosting under a subpath and configure `/docs` in Mintlify.
@@ -96,6 +104,7 @@ Open work is tracked on the GitHub project board [Developer front door · develo
 - Developer Previews link currently goes to stellar.org/blog/developers; Adam to confirm a filtered feed.
 - Regional starter pack button points at regionalstarterpack.com; confirm.
 - Post-v1: terraform PR for the review rule.
+- Ask Mintlify for a supported option to hide the widget's floating button, then delete the `#assistant-root` wrapper in `src/lib/assistant.ts`.
 
 ## Design references
 
