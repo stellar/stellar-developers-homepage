@@ -9,7 +9,7 @@
 .loop .loop__nodes .loop__node { position: absolute; width: 176px; height: 84px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; border-radius: 12px; background: color-mix(in srgb, var(--sds-clr-gray-01) 84%, transparent); border: 1px solid var(--sds-clr-gray-06); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); font-weight: 500; font-size: 15px; line-height: 20px; color: var(--sds-clr-gray-12); opacity: 0; animation: loop-fade 0.4s ease-out forwards; }
 .loop__node svg, .loop__hub svg { stroke: currentColor; }
 .loop__node svg { color: var(--sds-clr-lilac-11); }
-.loop__hub { position: absolute; z-index: 2; left: 224.5px; top: 198px; width: 144px; height: 72px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; border-radius: 12px; background: var(--sds-clr-lilac-09); color: var(--sds-clr-gray-01); font-weight: 500; font-size: 15px; line-height: 20px; }
+.loop__hub { position: absolute; z-index: 2; left: 224.5px; top: 198px; width: 144px; height: 72px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; border-radius: 12px; background: var(--sds-clr-lilac-09); color: #fcfcfc; font-weight: 500; font-size: 15px; line-height: 20px; } /* fixed white: gray-01 flips to near-black in dark mode and fell to 3.4:1 on the lilac hub */
 .loop__dots { z-index: 3; pointer-events: none; }
 .loop__dot { fill: var(--sds-clr-lilac-09); stroke: var(--sds-clr-gray-01); stroke-width: 2; opacity: 0; animation: loop-fade 0.3s ease-out forwards; }
 @keyframes loop-draw { to { stroke-dashoffset: 0; } }
