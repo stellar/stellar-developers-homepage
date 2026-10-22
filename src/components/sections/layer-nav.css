@@ -1,7 +1,7 @@
 /* ---------- Layer nav · v8 (Figma 2102:16503) ---------- */
 .layers { position: relative; }
 .layers > section { scroll-margin-top: 128px; } /* header 64 + bar 64 */
-.layer-nav { position: sticky; top: 64px; z-index: 40; height: 48px; border-top: 1px solid var(--sds-clr-gray-04); background: color-mix(in srgb, var(--sds-clr-gray-01) 92%, transparent); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); border-bottom: 1px solid var(--sds-clr-gray-04); }
+.layer-nav { position: sticky; top: 64px; z-index: 40; height: 48px; border-top: 1px solid var(--sds-clr-gray-04); background: var(--sds-clr-gray-01); /* solid: the Figma blur let section text ghost through where backdrop-filter was unavailable */ border-bottom: 1px solid var(--sds-clr-gray-04); }
 .layer-nav.is-stuck { border-top-color: transparent; }
 .layer-nav__row { display: flex; align-items: stretch; gap: 8px; height: 100%; overflow-x: auto; scrollbar-width: none; }
 .layer-nav__row::-webkit-scrollbar { display: none; }
