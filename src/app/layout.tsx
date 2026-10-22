@@ -13,6 +13,9 @@ export const metadata: Metadata = {
   title: "Stellar Developers",
   description: "Build on better financial infrastructure. Reliable rails, financial building blocks, and an ecosystem connected to where money moves.",
   metadataBase: new URL("https://developers.stellar.org"),
+  // Social cards: the image itself comes from src/app/opengraph-image.tsx (1200 × 630, built at export).
+  openGraph: { type: "website", url: "https://developers.stellar.org/", siteName: "Stellar Developers", title: "Stellar Developers", description: "Build where money already moves around the world. Reliable rails, financial building blocks, and an ecosystem of connected markets." },
+  twitter: { card: "summary_large_image", site: "@BuildOnStellar", title: "Stellar Developers", description: "Build where money already moves around the world. Reliable rails, financial building blocks, and an ecosystem of connected markets." },
 };
 
 // GA4 property "developers.Stellar.org" (same as the docs and the USDT0 page). Set NEXT_PUBLIC_GA_ID="" to disable.
