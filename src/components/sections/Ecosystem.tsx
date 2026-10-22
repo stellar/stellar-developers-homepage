@@ -7,7 +7,7 @@ import { docsUrl } from "@/lib/docs";
 // 07 · Ecosystem — V6 Figma 1679:5377 (media right). Copy from the 10/13 deck.
 export function Ecosystem() {
   return (
-    <section id="ecosystem" aria-labelledby="ecosystem-h2" className="pillar-section">
+    <section id="ecosystem" aria-labelledby="ecosystem-h2" className="pillar-section pillar-section--alt">
       <div className="container-page pillar">
         <div className="pillar__copy">
           <p className="eyebrow">Ecosystem</p>

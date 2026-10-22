@@ -1,5 +1,5 @@
 /* ---------- 08 Support · 09 Developer Previews · 10 Start building ---------- */
-.support { background: var(--sds-clr-gray-02); padding-block: 56px; }
+.support { background: var(--sds-clr-gray-01); padding-block: 56px; }
 .support__inner { display: flex; flex-direction: column; gap: 48px; }
 .support__cards { display: grid; grid-template-columns: 1fr; gap: 20px; }
 .card-previews { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; padding: 32px; border-radius: 16px; background: var(--sds-clr-lilac-03); border: 1px solid var(--sds-clr-lilac-06); }

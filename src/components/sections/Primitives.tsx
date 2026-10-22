@@ -8,7 +8,7 @@ import { docsUrl } from "@/lib/docs";
 // Figma uses lock-01 for both Transactions and Privacy; Transactions gets switch-horizontal-01 here (flagged).
 export function Primitives() {
   return (
-    <section id="primitives" aria-labelledby="primitives-h2" className="pillar-section pillar-section--alt">
+    <section id="primitives" aria-labelledby="primitives-h2" className="pillar-section">
       <div className="container-page pillar pillar--media-left">
         <div className="pillar__copy">
           <p className="eyebrow">Primitives</p>

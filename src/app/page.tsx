@@ -8,6 +8,7 @@ import { SupportAndStart } from "@/components/sections/SupportAndStart";
 
 // Section order follows the V8 frame (Figma 2097:15398) minus the layer nav, which Maz removed on 22 Oct
 // pending Edison's redesign of the pillars (#21). The hero runs straight into Network.
+// Backgrounds alternate gray-01 / gray-02 down the page (Maz, 22 Oct): hero, Network, Primitives, Ramps, Tooling, Ecosystem, Support, footer.
 export default function Home() {
   return (
     <>

@@ -8,7 +8,7 @@ import { docsUrl } from "@/lib/docs";
 // 03 · Network — V6 Figma 1679:5132. Copy from the 10/13 deck.
 export function Network() {
   return (
-    <section id="network" aria-labelledby="network-h2" className="pillar-section">
+    <section id="network" aria-labelledby="network-h2" className="pillar-section pillar-section--alt">
       <div className="container-page pillar">
         <div className="pillar__copy">
           <p className="eyebrow">Network</p>
