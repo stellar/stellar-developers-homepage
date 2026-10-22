@@ -35,8 +35,7 @@ Node 22 or newer.
 | Path | What |
 |---|---|
 | `src/app/layout.tsx` | Root layout: fonts, SDS stylesheet, theme bootstrap script, header, footer |
-| `src/app/page.tsx` | Section order per the V8 frame (Hero → Layer nav → Network → Primitives → Ramps → Tooling → Ecosystem → Support + Previews + Start building) |
-| `src/components/sections/LayerNav.tsx` | Three jump tabs under the hero (Network, Primitives, Ramps). In flow, not sticky; the highlighted tile follows the URL hash, Network by default |
+| `src/app/page.tsx` | Section order per the V8 frame (Hero → Network → Primitives → Ramps → Tooling → Ecosystem → Support + Previews + Start building). The pillar tiles / layer nav are out pending Edison's redesign (#21) |
 | `src/app/globals.css` | Token bridge, shared layout (`.pillar`, `.features`, `.ctas`), media module, code panels, nav, theme switcher |
 | `src/components/sections/*` | One file per section; copy lives here |
 | `src/components/shell/*` | Header, Nav (desktop), MobileMenu (sheet), ThemeSwitcher, Footer (v8: logo, socials, legal line), CookieSettings |
