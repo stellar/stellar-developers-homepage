@@ -1,3 +1,5 @@
+// Source for public/brand/og-card.png. Not a live route: Cloudflare does not forward /opengraph-image to Netlify.
+// To regenerate, move this file back to src/app/opengraph-image.tsx, run `npm run build`, copy out/opengraph-image to public/brand/og-card.png, and move it back.
 import { ImageResponse } from "next/og";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
