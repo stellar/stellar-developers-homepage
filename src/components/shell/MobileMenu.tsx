@@ -4,6 +4,7 @@ import { useEffect, useId, useState } from "react";
 import { List, X } from "@phosphor-icons/react/dist/ssr";
 import { docsUrl } from "@/lib/docs";
 import { ThemeSwitcher } from "@/components/shell/ThemeSwitcher";
+import { SOCIALS } from "@/components/shell/Footer";
 
 // Menu button (36px) and nav sheet for tablet and mobile (V7 frames 1884:11167 / 1884:11463).
 const LINKS = [
@@ -45,9 +46,12 @@ export function MobileMenu() {
             </div>
             {LINKS.slice(1).map((l) => <a key={l.label} href={l.href} className="sheet__link" onClick={() => setOpen(false)}>{l.label}</a>)}
           </nav>
-          {/* Mobile only: the appearance switcher lives in the sheet. Socials moved to the footer (Maz, 22 Oct). */}
+          {/* Mobile only: appearance switcher + socials as one utility row (Maz, 22 Oct). Socials are also in the footer. */}
           <div className="sheet__foot">
             <ThemeSwitcher />
+            {SOCIALS.map((s) => (
+              <a key={s.href} href={s.href} className="sheet__icon" aria-label={s.label} target="_blank" rel="noreferrer"><s.Icon size={20} aria-hidden /></a>
+            ))}
           </div>
         </div>
       ) : null}
