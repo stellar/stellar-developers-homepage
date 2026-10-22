@@ -36,7 +36,7 @@ export function Ramps() {
                   <span className="ramp-card__mark"><Icon.ShieldTick width={20} height={20} aria-hidden /></span>
                 </div>
                 <div className="ramp-card__copy">
-                  <h3 className="ramp-card__title">Build less, deploy around the world</h3>
+                  <h3 className="ramp-card__title">Build faster, deploy around the world</h3>
                   <p className="ramp-card__body">Integrate with local ramp providers to reach users in new markets without building from scratch.</p>
                 </div>
               </div>

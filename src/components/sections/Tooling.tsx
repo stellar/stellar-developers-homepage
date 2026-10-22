@@ -15,16 +15,16 @@ export function Tooling() {
         <div className="pillar__copy">
           <p className="eyebrow">Tooling</p>
           <h2 id="tooling-h2" className="h2">Tools for developers and agents</h2>
-          <p className="pillar__note">Build, test, and deploy with the Stellar CLI, JavaScript and Rust SDKs. Put your agent to work with MCP and skills. Reach network data with <Link href={docsUrl("/data/apis/rpc")} className="inline-link">Stellar RPC</Link>.</p>
+          <p className="pillar__note">Build, test, and deploy with the Stellar CLI, JavaScript, and Rust SDKs. Put your agent to work with MCP and skills. Reach network data with <Link href={docsUrl("/data/apis/rpc")} className="inline-link">Stellar RPC</Link>.</p>
           <ul className="features nav-list">
             <FeatureItem icon={<Icon.TerminalSquare width={16} height={16} />} title="Stellar CLI">
               Deploy contracts, issue assets and manage accounts from the terminal.
             </FeatureItem>
             <FeatureItem icon={<Icon.CodeBrowser width={16} height={16} />} title="SDKs">
-              JavaScript, Go and Rust maintained by SDF; Python, Java, Kotlin, .NET, PHP, iOS and Flutter from the community.
+              JavaScript, Go and Rust maintained by SDF; Python, Java, Kotlin, .NET, PHP, iOS, and Flutter from the community.
             </FeatureItem>
             <FeatureItem icon={<Icon.CpuChip01 width={16} height={16} />} title="MCP and skills">
-              Stellar Raven gives agents Stellar docs, live ecosystem data and playbooks; prebuilt skills cover contracts, wallets, assets and payments.
+              Stellar Raven gives agents Stellar docs, live ecosystem data and playbooks; prebuilt skills cover contracts, wallets, assets, and payments.
             </FeatureItem>
             <FeatureItem icon={<Icon.CreditCard02 width={16} height={16} />} title="x402">
               Agent payments over HTTP, so your agent can pay for what it uses.
@@ -35,7 +35,7 @@ export function Tooling() {
           </div>
         </div>
         <div className="pillar__media">
-          <MediaModule label="Tooling quick starts: CLI, SDKs, Skills, MCP and x402 commands">
+          <MediaModule label="Tooling quick starts: CLI, SDKs, MCP, Skills, and x402 commands">
             <ToolingTabs />
           </MediaModule>
         </div>
