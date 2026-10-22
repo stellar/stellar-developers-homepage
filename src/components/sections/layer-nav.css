@@ -8,9 +8,14 @@
 .layer-nav__item { display: inline-flex; align-items: center; gap: 10px; padding: 0 12px; flex: 0 0 auto; border-bottom: 2px solid transparent; font-weight: 500; font-size: 15px; line-height: 1; color: var(--sds-clr-gray-11); text-decoration: none; white-space: nowrap; }
 .layer-nav__item[aria-current="true"] { color: var(--sds-clr-gray-12); border-bottom-color: var(--sds-clr-lilac-09); }
 /* Layer tile (2097:17560 scaled to 32px): rounded square, radius 8. SDS tokens instead of the Figma beige:
-   default gray-03 / gray-11 icon, active lilac-03 / lilac-11 icon, same pairing as the section icon tiles. No hover state. */
+   default gray-03 / gray-11 icon, active lilac-03 / lilac-11 icon, same pairing as the section icon tiles. */
 .layer-tile { width: 32px; height: 32px; border-radius: 8px; background: var(--sds-clr-gray-03); display: inline-flex; align-items: center; justify-content: center; color: var(--sds-clr-gray-11); }
 .layer-tile svg { stroke: currentColor; }
 .layer-nav__item[aria-current="true"] .layer-tile { background: var(--sds-clr-lilac-03); color: var(--sds-clr-lilac-11); }
+/* Hover (pointer devices only): tile and label step up one grey. Lilac stays reserved for the active section. */
+@media (hover: hover) {
+  .layer-nav__item:not([aria-current="true"]):hover { color: var(--sds-clr-gray-12); }
+  .layer-nav__item:not([aria-current="true"]):hover .layer-tile { background: var(--sds-clr-gray-04); color: var(--sds-clr-gray-12); }
+}
 .layer-nav__item:focus-visible { outline: 2px solid var(--sds-clr-lilac-09); outline-offset: -2px; }
 @media (min-width: 768px) { .layer-nav { height: 64px; } .layer-nav__row { overflow: visible; } }
