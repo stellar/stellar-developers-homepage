@@ -2,11 +2,12 @@
 .footer { background: var(--sds-clr-gray-02); border-top: 1px solid var(--sds-clr-gray-06); }
 .footer__inner { display: flex; flex-direction: column; align-items: flex-start; gap: 24px; padding-block: 32px; }
 .footer__brand { display: flex; flex-direction: column; align-items: flex-start; gap: 20px; color: var(--sds-clr-gray-12); }
-.footer__social { display: flex; gap: 8px; }
+.footer__social { display: none; gap: 8px; } /* below 768 the socials live in the burger menu instead (Maz, 22 Oct) */
 .footer__legal { display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: center; font-size: 12px; line-height: 18px; color: var(--sds-clr-gray-11); }
 .footer__legal a, .footer__legal button { color: inherit; text-decoration: none; background: none; border: 0; padding: 0; font: inherit; cursor: pointer; }
 .footer__legal a:hover, .footer__legal button:hover { color: var(--sds-clr-gray-12); }
 @media (min-width: 768px) {
   .footer__inner { flex-direction: row; align-items: center; justify-content: space-between; gap: 32px; }
   .footer__brand { flex-direction: row; align-items: center; gap: 24px; }
+  .footer__social { display: flex; }
 }

@@ -46,7 +46,7 @@ export function MobileMenu() {
             </div>
             {LINKS.slice(1).map((l) => <a key={l.label} href={l.href} className="sheet__link" onClick={() => setOpen(false)}>{l.label}</a>)}
           </nav>
-          {/* Mobile only: appearance switcher + socials as one utility row (Maz, 22 Oct). Socials are also in the footer. */}
+          {/* Mobile only: appearance switcher + socials as one utility row (Maz, 22 Oct). The footer shows them from 768px up instead. */}
           <div className="sheet__foot">
             <ThemeSwitcher />
             {SOCIALS.map((s) => (
