@@ -17,8 +17,8 @@ export const LAYERS: Layer[] = [
 
 export function LayerNav() {
   const [active, setActive] = useState(LAYERS[0].id);
+  const [stuck, setStuck] = useState(false); // in flow the bar has its own top rule; stuck, the header's rule takes over
   const bar = useRef<HTMLElement>(null);
-
   // Active = whichever layer covers the top third of the viewport (below header + bar).
   useEffect(() => {
     const els = LAYERS.map((l) => document.getElementById(l.id)).filter((e): e is HTMLElement => !!e);
@@ -27,6 +27,7 @@ export function LayerNav() {
       let current = LAYERS[0].id;
       for (const el of els) if (el.getBoundingClientRect().top <= line) current = el.id;
       setActive(current);
+      setStuck((bar.current?.getBoundingClientRect().top ?? 999) <= 64.5);
     };
     pick();
     window.addEventListener("scroll", pick, { passive: true });
@@ -41,7 +42,8 @@ export function LayerNav() {
   }, [active]);
 
   return (
-    <nav ref={bar} className="layer-nav" aria-label="Layers">
+    <>
+      <nav ref={bar} className={stuck ? "layer-nav is-stuck" : "layer-nav"} aria-label="Layers">
       <div className="container-page layer-nav__row">
         {LAYERS.map((l) => (
           <a key={l.id} href={`#${l.id}`} data-layer={l.id} className="layer-nav__item" aria-current={active === l.id ? "true" : undefined}>
@@ -50,6 +52,7 @@ export function LayerNav() {
           </a>
         ))}
       </div>
-    </nav>
+      </nav>
+    </>
   );
 }
