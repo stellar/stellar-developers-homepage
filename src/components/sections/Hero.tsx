@@ -28,7 +28,7 @@ export function Hero() {
             ))}
           </dl>
           <div className="hero__ctas">
-            <ButtonLink href={docsUrl("/tools/quickstart")} variant="primary" size="lg" icon={<ArrowRight size={16} weight="bold" aria-hidden />}>
+            <ButtonLink href={docsUrl("/build")} variant="primary" size="lg" icon={<ArrowRight size={16} weight="bold" aria-hidden />}>
               Get started
             </ButtonLink>
           </div>
