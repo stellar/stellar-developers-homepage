@@ -1,0 +1,20 @@
+/* ---------- Layer nav · v8 (Figma 2102:16503) ---------- */
+.layers { position: relative; }
+.layers > section { scroll-margin-top: 128px; } /* header 64 + bar 64 */
+.layer-nav { position: sticky; top: 64px; z-index: 40; height: 48px; background: color-mix(in srgb, var(--sds-clr-gray-01) 92%, transparent); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); border-bottom: 1px solid var(--sds-clr-gray-04); }
+.layer-nav__row { display: flex; align-items: stretch; gap: 8px; height: 100%; overflow-x: auto; scrollbar-width: none; }
+.layer-nav__row::-webkit-scrollbar { display: none; }
+.layer-nav__item { display: inline-flex; align-items: center; gap: 10px; padding: 0 12px; flex: 0 0 auto; border-bottom: 2px solid transparent; font-weight: 500; font-size: 15px; line-height: 1; color: var(--sds-clr-gray-11); text-decoration: none; white-space: nowrap; }
+.layer-nav__item:hover { color: var(--sds-clr-gray-12); }
+.layer-nav__item[aria-current="true"] { color: var(--sds-clr-gray-12); border-bottom-color: var(--sds-clr-gray-12); }
+/* Layer tile · v8 (2097:17560): 32px tile, 20px clear pad, 14px icon. Default sits at 55% like the frame. */
+.layer-tile { position: relative; width: 32px; height: 32px; border-radius: 16px; background: var(--clr-beige-02); opacity: 0.55; display: inline-flex; align-items: center; justify-content: center; color: var(--sds-clr-gray-11); transition: background-color 120ms, opacity 120ms; }
+.layer-tile svg { stroke: currentColor; }
+.layer-nav__item:hover .layer-tile { background: var(--clr-beige-03); opacity: 1; color: var(--sds-clr-gray-12); }
+.layer-nav__item[aria-current="true"] .layer-tile { opacity: 1; color: var(--sds-clr-gray-12); }
+.layer-nav__item[data-layer="network"][aria-current="true"] .layer-tile { background: var(--clr-beige-06); }
+.layer-nav__item[data-layer="primitives"][aria-current="true"] .layer-tile { background: var(--clr-beige-05); }
+.layer-nav__item[data-layer="ramps"][aria-current="true"] .layer-tile { background: var(--clr-beige-04); }
+.layer-nav__item:focus-visible { outline: 2px solid var(--sds-clr-lilac-09); outline-offset: -2px; }
+@media (min-width: 768px) { .layer-nav { height: 64px; } .layer-nav__row { overflow: visible; } }
+@media (prefers-reduced-motion: reduce) { .layer-tile { transition: none; } }

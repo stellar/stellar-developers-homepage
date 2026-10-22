@@ -17,6 +17,8 @@ export const metadata: Metadata = {
 
 // GA4 property "developers.Stellar.org" (same as the docs and the USDT0 page). Set NEXT_PUBLIC_GA_ID="" to disable.
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID ?? "G-ZCT4GYX8KN";
+// OneTrust cookie consent, same setup as stellar.org. Unset = no banner and no Cookie settings link.
+const ONETRUST_ID = process.env.NEXT_PUBLIC_ONETRUST_DOMAIN_SCRIPT_ID ?? "";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -24,6 +26,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         {/* Apply the saved appearance before first paint (System / Light / Dark). */}
         <Script id="theme-init" strategy="beforeInteractive">{`(function(){try{var p=localStorage.getItem('theme')||'system';var d=p==='dark'||(p==='system'&&matchMedia('(prefers-color-scheme: dark)').matches);var e=document.documentElement;e.classList.toggle('sds-theme-dark',d);e.classList.toggle('sds-theme-light',!d);e.setAttribute('data-theme',d?'dark':'light');e.style.colorScheme=d?'dark':'light';}catch(e){}})();`}</Script>
+        {ONETRUST_ID ? (
+          <>
+            <Script id="onetrust-stub" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" strategy="beforeInteractive" data-domain-script={ONETRUST_ID} />
+            <Script id="onetrust-wrapper" strategy="beforeInteractive">{`function OptanonWrapper(){}`}</Script>
+          </>
+        ) : null}
       </head>
       <body className="min-h-full flex flex-col">
         <a href="#main" className="skip-link">Skip to content</a>

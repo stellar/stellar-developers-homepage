@@ -1,47 +1,37 @@
 import Link from "next/link";
+import { GithubLogo, DiscordLogo, XLogo, YoutubeLogo } from "@phosphor-icons/react/dist/ssr";
 import { StellarLogo } from "@/components/ui/StellarLogo";
+import { CookieSettings } from "./CookieSettings";
 import "./footer.css";
-import { docsUrl } from "@/lib/docs";
 
-const COLUMNS = [
-  { title: "Build", links: [["Docs", docsUrl("")], ["Quickstart", docsUrl("/tools/quickstart")], ["Toolkits", docsUrl("/tools")], ["Smart contracts", docsUrl("/build/smart-contracts")]] },
-  { title: "Ecosystem", links: [["Partners", "#ramps"], ["Validators & Apps", docsUrl("/validators")], ["Developer Preview", "#previews"], ["For Agents", docsUrl("/build/building-with-ai")]] },
-  { title: "Community", links: [["GitHub ↗", "https://github.com/stellar"], ["Discord ↗", "https://discord.gg/Q2xfSRAhS"], ["Stack Exchange ↗", "https://stellar.stackexchange.com"], ["Events", "https://stellar.org/events"]] },
-  { title: "Resources", links: [["Network status ↗", "https://status.stellar.org"], ["Developer blog", "https://stellar.org/blog/developers"], ["Stellar.org ↗", "https://stellar.org"], ["Contact", "https://stellar.org/contact"]] },
+// Social links, same set and order as the mobile sheet (Maz, 22 Oct).
+export const SOCIALS = [
+  { label: "Stellar on GitHub", href: "https://github.com/stellar", Icon: GithubLogo },
+  { label: "Stellar developer Discord", href: "https://discord.com/invite/zVYdY3ktTn", Icon: DiscordLogo },
+  { label: "Stellar developers on X", href: "https://x.com/BuildOnStellar", Icon: XLogo },
+  { label: "Stellar Development Foundation on YouTube", href: "https://www.youtube.com/@StellarDevelopmentFoundation", Icon: YoutubeLogo },
 ] as const;
 
-// Footer — V6 Figma 1836:6067: gray-02, brand column 380 + four flex columns, bottom row with a single rule.
+// Footer · v8 (Figma 2100:17717): logo + legal line only, link columns removed until destinations exist.
+// Legal links match stellar.org. Socials added per Maz.
 export function Footer() {
   return (
     <footer className="footer">
       <div className="container-page footer__inner">
-        <div className="footer__cols">
-          <div className="footer__brand">
-            <StellarLogo width={96} height={24} />
-            <p>Build where money already moves around the world</p>
-          </div>
-          {COLUMNS.map((c) => (
-            <div key={c.title} className="footer__col">
-              <h2 className="footer__title">{c.title}</h2>
-              <ul className="nav-list footer__links">
-                {c.links.map(([label, href]) => (
-                  <li key={label}><Link href={href}>{label}</Link></li>
-                ))}
-              </ul>
-            </div>
-          ))}
+        <div className="footer__brand">
+          <StellarLogo width={96} height={24} />
+          <ul className="nav-list footer__social" aria-label="Follow Stellar developers">
+            {SOCIALS.map((s) => (
+              <li key={s.href}><a href={s.href} className="icon-btn" aria-label={s.label} target="_blank" rel="noreferrer"><s.Icon size={20} aria-hidden /></a></li>
+            ))}
+          </ul>
         </div>
-      </div>
-      {/* Bottom band mirrors the header: full-width rule, 64px tall, content on the page grid. */}
-      <div className="footer__bottom">
-        <div className="container-page footer__bottom-inner">
-          <span className="footer__status"><span className="dot dot--green" aria-hidden />Network status</span>
-          <div className="footer__legal">
-            <Link href="https://stellar.org/terms-of-service">Terms</Link>
-            <Link href="https://stellar.org/privacy-policy">Privacy</Link>
-            <button type="button">Cookie settings</button>
-            <span>© 2026 Stellar Development Foundation</span>
-          </div>
+        <div className="footer__legal">
+          <Link href="https://stellar.org/terms-of-service">Terms</Link>
+          <Link href="https://stellar.org/privacy-policy">Privacy</Link>
+          <Link href="https://stellar.org/brand-policy">Brand policy</Link>
+          <CookieSettings />
+          <span>© 2026 Stellar Development Foundation</span>
         </div>
       </div>
     </footer>

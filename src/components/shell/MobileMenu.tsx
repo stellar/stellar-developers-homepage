@@ -1,9 +1,10 @@
 "use client";
 
 import { useEffect, useId, useState } from "react";
-import { List, X, XLogo, DiscordLogo } from "@phosphor-icons/react/dist/ssr";
+import { List, X } from "@phosphor-icons/react/dist/ssr";
 import { docsUrl } from "@/lib/docs";
 import { ThemeSwitcher } from "@/components/shell/ThemeSwitcher";
+import { SOCIALS } from "@/components/shell/Footer";
 
 // Menu button (36px) and nav sheet for tablet and mobile (V7 frames 1884:11167 / 1884:11463).
 const LINKS = [
@@ -48,8 +49,9 @@ export function MobileMenu() {
           {/* Mobile only: appearance + socials live in the sheet (Maz, 16 Oct) */}
           <div className="sheet__foot">
             <ThemeSwitcher />
-            <a href="https://x.com/BuildOnStellar" className="sheet__icon" aria-label="Stellar developers on X" target="_blank" rel="noreferrer"><XLogo size={20} aria-hidden /></a>
-            <a href="https://discord.gg/Q2xfSRAhS" className="sheet__icon" aria-label="Stellar developer Discord" target="_blank" rel="noreferrer"><DiscordLogo size={20} aria-hidden /></a>
+            {SOCIALS.map((s) => (
+              <a key={s.href} href={s.href} className="sheet__icon" aria-label={s.label} target="_blank" rel="noreferrer"><s.Icon size={20} aria-hidden /></a>
+            ))}
           </div>
         </div>
       ) : null}
