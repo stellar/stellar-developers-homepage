@@ -1,5 +1,4 @@
 /* ---------- Layer nav · v8 (Figma 2102:16503), in flow under the hero ---------- */
-.layers > section { scroll-margin-top: 64px; } /* header only; the bar does not stick */
 .layer-nav { height: 48px; background: var(--sds-clr-gray-01); border-top: 1px solid var(--sds-clr-gray-04); border-bottom: 1px solid var(--sds-clr-gray-04); }
 .layer-nav__row { display: flex; align-items: stretch; gap: 8px; height: 100%; overflow-x: auto; scrollbar-width: none; }
 .layer-nav__row::-webkit-scrollbar { display: none; }
