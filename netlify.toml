@@ -6,17 +6,17 @@
 [context.production.environment]
   NEXT_PUBLIC_DOCS_BASE = "/docs"
 
-# Docs live on Mintlify, served under /docs on this domain (subpath hosting).
-# The target host is set in Mintlify's dashboard once the subpath is configured.
+# On developers.stellar.org Cloudflare routes /docs to Mintlify before requests reach Netlify, so these rules never fire there.
+# They only serve the review copy at stellar-developers-homepage.netlify.app, so its docs links behave like production.
 # Bare /docs first: the wildcard below would proxy "/docs/" and Mintlify answers that with a 308 back to /docs, which loops.
 [[redirects]]
   from = "/docs"
-  to = "https://sdf-migration-preview.mintlify.app/docs"
+  to = "https://stellardevelopmentfoundation.mintlify.site/docs"
   status = 200
   force = true
 
 [[redirects]]
   from = "/docs/*"
-  to = "https://sdf-migration-preview.mintlify.app/docs/:splat"
+  to = "https://stellardevelopmentfoundation.mintlify.site/docs/:splat"
   status = 200
   force = true

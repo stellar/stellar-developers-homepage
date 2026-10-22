@@ -83,8 +83,7 @@ Origins must be allowed in Mintlify's widget settings: `http://localhost:3100`, 
 ## The /docs proxy and cutover (Steph + ops)
 
 1. Confirm SDF's Mintlify plan supports hosting under a subpath and configure `/docs` in Mintlify.
-2. Tell Maz the production Mintlify hostname. The rewrite in `netlify.toml` currently points at the migration preview host and needs updating.
-3. Agree the DNS cutover date with ops: `developers.stellar.org` → Netlify. Netlify then forwards `/docs/*` to Mintlify.
+2. Cutover done 22 Oct 2026 (stellar/ops#5026). Cloudflare routes `/` and the homepage assets to Netlify and everything else to Mintlify (`stellardevelopmentfoundation.mintlify.site`). The `/docs` rules in `netlify.toml` only matter on the Netlify review URL.
 
 ## Reviewing and shipping
 
