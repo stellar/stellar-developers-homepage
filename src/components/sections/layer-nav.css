@@ -6,6 +6,8 @@
 /* Layer tile (2097:17560 scaled to 32px): rounded square, radius 8, SDS tokens instead of the Figma beige. */
 .layer-tile { width: 32px; height: 32px; border-radius: 8px; background: var(--sds-clr-gray-03); display: inline-flex; align-items: center; justify-content: center; color: var(--sds-clr-gray-11); }
 .layer-tile svg { stroke: currentColor; }
+/* Network's tile is lilac at rest as a hint that the row is clickable (Maz, 22 Oct); the others go lilac on hover. */
+.layer-nav__item:first-child .layer-tile { background: var(--sds-clr-lilac-03); color: var(--sds-clr-lilac-11); }
 /* Hover (pointer devices): tile goes lilac, same pairing as the section icon tiles. */
 @media (hover: hover) {
   .layer-nav__item:hover .layer-tile { background: var(--sds-clr-lilac-03); color: var(--sds-clr-lilac-11); }
