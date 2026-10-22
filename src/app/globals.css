@@ -34,9 +34,6 @@
 .sds-theme-dark { --clr-dev-surface-deep: #2c2250; --clr-dev-on-deep: #ededed; --clr-dev-connector: #9e8cfc; --clr-dev-orbit: #d9d9d9; } /* orbit ring is #d9d9d9 in the V7 Dark frame (exported SVG, not token-bound) */
 /* tile-on-deep = SDS lilac-03 on lilac-04 border, icon lilac-11 (flips with the theme) */
 :root { --clr-dev-tile-on-deep: var(--sds-clr-lilac-03); }
-/* Layer nav tiles: Figma clr/beige (V8). Dark values are not in the frame; mapped onto the SDS gray ramp for now. */
-.sds-theme-light { --clr-beige-02: #f4f2ec; --clr-beige-03: #eae7de; --clr-beige-04: #e0dcd0; --clr-beige-05: #d6d3c4; --clr-beige-06: #c4bfad; }
-.sds-theme-dark { --clr-beige-02: var(--sds-clr-gray-03); --clr-beige-03: var(--sds-clr-gray-04); --clr-beige-04: var(--sds-clr-gray-05); --clr-beige-05: var(--sds-clr-gray-06); --clr-beige-06: var(--sds-clr-gray-07); }
 @media (min-width: 768px) { :root { --page-gutter: 48px; } }
 @media (min-width: 1080px) { :root { --page-gutter: 96px; } }
 
