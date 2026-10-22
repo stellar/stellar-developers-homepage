@@ -35,10 +35,11 @@ Node 22 or newer.
 | Path | What |
 |---|---|
 | `src/app/layout.tsx` | Root layout: fonts, SDS stylesheet, theme bootstrap script, header, footer |
-| `src/app/page.tsx` | Section order (Hero → Pillar cards → Network → Primitives → Tooling → Ramps → Ecosystem → Support + Previews + Start building) |
+| `src/app/page.tsx` | Section order per the V8 frame (Hero → Layer nav → Network → Primitives → Ramps → Tooling → Ecosystem → Support + Previews + Start building) |
+| `src/components/sections/LayerNav.tsx` | Three jump tabs under the hero (Network, Primitives, Ramps). In flow, not sticky; the highlighted tile follows the URL hash, Network by default |
 | `src/app/globals.css` | Token bridge, shared layout (`.pillar`, `.features`, `.ctas`), media module, code panels, nav, theme switcher |
 | `src/components/sections/*` | One file per section; copy lives here |
-| `src/components/shell/*` | Header, Nav (desktop), MobileMenu (sheet), ThemeSwitcher, Footer |
+| `src/components/shell/*` | Header, Nav (desktop), MobileMenu (sheet), ThemeSwitcher, Footer (v8: logo, socials, legal line), CookieSettings |
 | `src/components/panels/*` | Ledger panel, tabbed code panels (content for Primitives and Tooling tabs) |
 | `src/components/visuals/*` | Hero dot grid (Edison's export), grain gradient, scattered dots, ecosystem orbit, Build/Grow/Scale ladder |
 | `src/lib/docs.ts` | `docsUrl()` helper, see Links below |
@@ -57,6 +58,12 @@ SDS adds prose margins and list markers by default. `globals.css` resets those f
 ## Links to the docs
 
 Every docs link goes through `docsUrl("/path")`. In production (`NEXT_PUBLIC_DOCS_BASE="/docs"`, set in `netlify.toml`) that produces relative `/docs/...` paths, which is correct once the site is served from developers.stellar.org. Everywhere else (local dev, Netlify deploy previews) it produces `https://developers.stellar.org/docs/...` so links work before cutover. Paths were checked against both the live docs and the Mintlify preview; the structure is unchanged by the migration.
+
+## Footer and cookie consent
+
+Footer v8 (Figma 2100:17717) is logo + legal line only; the link columns were removed until destinations exist. Socials (GitHub, Discord, X, YouTube) live in `SOCIALS` in `Footer.tsx` and are shared with the mobile sheet. Legal links point at stellar.org: terms-of-service, privacy-policy, brand-policy.
+
+Cookie settings follow stellar.org's OneTrust setup: `layout.tsx` loads `cdn.cookielaw.org/scripttemplates/otSDKStub.js` with `data-domain-script` from `NEXT_PUBLIC_ONETRUST_DOMAIN_SCRIPT_ID`, and the footer's "Cookie settings" button calls `window.Optanon.ToggleInfoDisplay()`. Both render only when that env var is set in Netlify. The domain script ID comes from SDF's OneTrust account (ask whoever runs stellar.org analytics); until it is set there is no banner and no Cookie settings link.
 
 ## Analytics
 
