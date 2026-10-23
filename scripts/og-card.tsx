@@ -37,16 +37,16 @@ function dots() {
 
 export default async function OpenGraphImage() {
   const [regular, medium, logoSvg] = await Promise.all([inter(400), inter(500), readFile(path.join(process.cwd(), "public/brand/stellar-logo.svg"), "utf8")]);
-  const logo = `data:image/svg+xml;base64,${Buffer.from(logoSvg.replace(/currentColor/g, "#171717")).toString("base64")}`;
+  const logo = `data:image/svg+xml;base64,${Buffer.from(logoSvg.replace(/currentColor/g, "#ededed")).toString("base64")}`;
   const fonts = [regular && { name: "Inter", data: regular, weight: 400 as const, style: "normal" as const }, medium && { name: "Inter", data: medium, weight: 500 as const, style: "normal" as const }].filter(Boolean) as NonNullable<ConstructorParameters<typeof ImageResponse>[1]>["fonts"];
 
   return new ImageResponse(
     (
-      <div style={{ width: "100%", height: "100%", display: "flex", background: "#fcfcfc", fontFamily: "Inter", color: "#171717", position: "relative" }}>
+      <div style={{ width: "100%", height: "100%", display: "flex", background: "#161616", fontFamily: "Inter", color: "#ededed", position: "relative" }}>
         {/* dot grid, right side */}
         <div style={{ position: "absolute", right: 72, top: 135, width: 400, height: 360, display: "flex" }}>
           {dots().map((d, i) => (
-            <div key={i} style={{ position: "absolute", left: d.x + 20 - d.r, top: d.y + 20 - d.r, width: d.r * 2, height: d.r * 2, borderRadius: 999, background: "#aa99ec", opacity: d.o }} />
+            <div key={i} style={{ position: "absolute", left: d.x + 20 - d.r, top: d.y + 20 - d.r, width: d.r * 2, height: d.r * 2, borderRadius: 999, background: "#9e8cfc", opacity: d.o }} />
           ))}
         </div>
         {/* copy */}
@@ -54,9 +54,9 @@ export default async function OpenGraphImage() {
           <img src={logo} width={160} height={40} alt="" />
           <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
             <div style={{ fontSize: 60, lineHeight: 1.08, letterSpacing: -2.4, fontWeight: 400 }}>Build where money already moves around the world</div>
-            <div style={{ fontSize: 24, lineHeight: 1.4, color: "#6f6f6f", fontWeight: 400 }}>Reliable rails, financial building blocks, and an ecosystem of connected markets.</div>
+            <div style={{ fontSize: 24, lineHeight: 1.4, color: "#a0a0a0", fontWeight: 400 }}>Reliable rails, financial building blocks, and an ecosystem of connected markets.</div>
           </div>
-          <div style={{ display: "flex", alignItems: "center", gap: 12, fontSize: 20, fontWeight: 500, color: "#6f6f6f" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 12, fontSize: 20, fontWeight: 500, color: "#a0a0a0" }}>
             <div style={{ width: 10, height: 10, borderRadius: 999, background: "#6e56cf", display: "flex" }} />
             developers.stellar.org
           </div>
