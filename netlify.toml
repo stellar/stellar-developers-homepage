@@ -20,3 +20,10 @@
   to = "https://stellardevelopmentfoundation.mintlify.site/docs/:splat"
   status = 200
   force = true
+
+# Docs MCP server, called by the WebMCP search_docs tool (src/lib/webmcp.ts).
+[[redirects]]
+  from = "/mcp"
+  to = "https://stellardevelopmentfoundation.mintlify.site/mcp"
+  status = 200
+  force = true
