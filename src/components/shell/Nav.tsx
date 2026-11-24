@@ -7,6 +7,7 @@ import { docsUrl } from "@/lib/docs";
 // Every nav item leaves this page except Resources, which opens a menu (Figma 1475:5749).
 // Opens on hover (and on click or focus for touch and keyboard). Underline shows on hover, focus, and while open.
 const RESOURCES = [
+  { title: "Stellar Native Wallet (Varial)", href: "https://varialwallet.com/" },
   { title: "Stellar Lab", href: "https://lab.stellar.org/" },
   { title: "Skills", href: "https://skills.stellar.org/" },
   { title: "Block Explorers", href: docsUrl("/tools/developer-tools/block-explorers") },

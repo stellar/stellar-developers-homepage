@@ -14,6 +14,7 @@ const LINKS = [
   { label: "Blog", href: "https://stellar.org/blog/developers" },
 ];
 const RESOURCES = [
+  { title: "Stellar Native Wallet (Varial)", href: "https://varialwallet.com/" },
   { title: "Stellar Lab", href: "https://lab.stellar.org/" },
   { title: "Skills", href: "https://skills.stellar.org/" },
   { title: "Block Explorers", href: docsUrl("/tools/developer-tools/block-explorers") },
