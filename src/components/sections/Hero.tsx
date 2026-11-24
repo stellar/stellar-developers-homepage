@@ -17,7 +17,7 @@ export function Hero() {
     <section id="hero" aria-labelledby="hero-h1" className="hero">
       <div className="container-page hero__inner">
         <div className="hero__copy">
-          <h1 id="hero-h1" className="hero__h1">Build where money already moves around the world</h1>
+          <h1 id="hero-h1" className="hero__h1">Build where money already moves</h1>
           <p className="hero__lead">Reliable rails, financial building blocks, and an ecosystem of connected markets.</p>
           <dl className="hero__proof">
             {STATS.map((s) => (
