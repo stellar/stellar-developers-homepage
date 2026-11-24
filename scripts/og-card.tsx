@@ -7,7 +7,7 @@ import path from "node:path";
 // Social card (1200 × 630) built from the page's own ingredients: Stellar logo, hero headline,
 // lilac dot grid on gray-01. Pre-rendered at build (static export) and served at /opengraph-image.
 export const dynamic = "force-static";
-export const alt = "Stellar Developers: build where money already moves around the world";
+export const alt = "Stellar Developers: build where money already moves";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -53,7 +53,7 @@ export default async function OpenGraphImage() {
         <div style={{ position: "absolute", left: 80, top: 72, bottom: 72, width: 640, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
           <img src={logo} width={160} height={40} alt="" />
           <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
-            <div style={{ fontSize: 60, lineHeight: 1.08, letterSpacing: -2.4, fontWeight: 400 }}>Build where money already moves around the world</div>
+            <div style={{ fontSize: 60, lineHeight: 1.08, letterSpacing: -2.4, fontWeight: 400 }}>Build where money already moves</div>
             <div style={{ fontSize: 24, lineHeight: 1.4, color: "#a0a0a0", fontWeight: 400 }}>Reliable rails, financial building blocks, and an ecosystem of connected markets.</div>
           </div>
           <div style={{ display: "flex", alignItems: "center", gap: 12, fontSize: 20, fontWeight: 500, color: "#a0a0a0" }}>
